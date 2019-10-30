@@ -306,7 +306,7 @@
 
 <h5 id="4-清空表"><a href="#4-清空表" class="headerlink" title="4.清空表"></a>4.清空表</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">truncate table 表名;</span><br></pre></td></tr></table></figure>
 
-<h6 id="truncate-清空-和delete-删除-的区别"><a href="#truncate-清空-和delete-删除-的区别" class="headerlink" title="truncate(清空)和delete(删除)的区别"></a>truncate(清空)和delete(删除)的区别</h6><p>1.truncate将清空日志，数据不可恢复。</p>
+<h5 id="truncate-清空-和delete-删除-的区别"><a href="#truncate-清空-和delete-删除-的区别" class="headerlink" title="truncate(清空)和delete(删除)的区别"></a>truncate(清空)和delete(删除)的区别</h5><p>1.truncate将清空日志，数据不可恢复。</p>
 <p>2.truncate将重置自增列。</p>
 <p>3.truncate 不可清空有外键约束的表。</p>
 <h3 id="第四章-数据查询"><a href="#第四章-数据查询" class="headerlink" title="第四章 数据查询"></a>第四章 数据查询</h3><p>1.数据查询</p>
@@ -347,16 +347,25 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select studentid,studentname,gender,age from stuinfo limit 4;</span><br></pre></td></tr></table></figure>
 
 <p>由于没有指定位置偏移量，所以从第一行开始，行数指定为四，则意味着只显示前四条记录；</p>
-<h4 id="MySQL的内置行数"><a href="#MySQL的内置行数" class="headerlink" title="MySQL的内置行数"></a>MySQL的内置行数</h4><h5 id="1-字符串函数"><a href="#1-字符串函数" class="headerlink" title="1.字符串函数"></a>1.字符串函数</h5><h6 id="CONCAT：连接字符串；"><a href="#CONCAT：连接字符串；" class="headerlink" title="CONCAT：连接字符串；"></a>CONCAT：连接字符串；</h6><p>select concat(‘今天’,’晴天’) 返回：今天晴天；</p>
-<h6 id="LENGTH-返回字符串的长度；"><a href="#LENGTH-返回字符串的长度；" class="headerlink" title="LENGTH:返回字符串的长度；"></a>LENGTH:返回字符串的长度；</h6><p>length(‘hello word’) 结果：11；</p>
+<h4 id="MySQL的内置行数"><a href="#MySQL的内置行数" class="headerlink" title="MySQL的内置行数"></a>MySQL的内置行数</h4><h5 id="1-字符串函数"><a href="#1-字符串函数" class="headerlink" title="1.字符串函数"></a>1.字符串函数</h5><p><strong>CONCAT：连接字符串；</strong></p>
+<p>select concat(‘今天’,’晴天’) 返回：今天晴天；</p>
+<p><strong>LENGTH:返回字符串的长度；</strong></p>
+<p>length(‘hello word’) 结果：11；</p>
 <p>注意：一个字代表三个字符；length(‘mysql数据库’)结果为：14;</p>
-<h6 id="UPPER-将字符串转为大写；"><a href="#UPPER-将字符串转为大写；" class="headerlink" title="UPPER:将字符串转为大写；"></a>UPPER:将字符串转为大写；</h6><p>upper(‘abcd’) 返回：ABCD；</p>
-<h6 id="LTRIM-去除左边的空格；"><a href="#LTRIM-去除左边的空格；" class="headerlink" title="LTRIM:去除左边的空格；"></a>LTRIM:去除左边的空格；</h6><p>ltrim(‘ abc’) 返回：’abc’;</p>
-<h6 id="RTRIM-去除右边的空格；"><a href="#RTRIM-去除右边的空格；" class="headerlink" title="RTRIM:去除右边的空格；"></a>RTRIM:去除右边的空格；</h6><p>rtrim(‘abc ‘) 返回：’abc’;</p>
-<h6 id="TRIM-去除左右两边的空格"><a href="#TRIM-去除左右两边的空格" class="headerlink" title="TRIM:去除左右两边的空格;"></a>TRIM:去除左右两边的空格;</h6><p>trim(‘ ABC ‘) 返回’ABC’;</p>
-<h6 id="REPLACE-替换；"><a href="#REPLACE-替换；" class="headerlink" title="REPLACE:替换；"></a>REPLACE:替换；</h6><p>replace(‘abcccd’,’c’,’x’) 将字符串中的c替换为x; 返回：’abxxxd’;</p>
-<h6 id="STRCMP-比较字符串"><a href="#STRCMP-比较字符串" class="headerlink" title="STRCMP:比较字符串;"></a>STRCMP:比较字符串;</h6><p>strcmp(s1,s2);</p>
-<h6 id="SUBSTRING-截取字符串；"><a href="#SUBSTRING-截取字符串；" class="headerlink" title="SUBSTRING:截取字符串；"></a>SUBSTRING:截取字符串；</h6><p>substring(‘johnson’,5,3) 从第五个位置开始截取长度为3的字符串。返回：’son’;</p>
+<p><strong>UPPER:将字符串转为大写；</strong></p>
+<p>upper(‘abcd’) 返回：ABCD；</p>
+<p><strong>LTRIM:去除左边的空格；</strong></p>
+<p>ltrim(‘ abc’) 返回：’abc’;</p>
+<p><strong>RTRIM:去除右边的空格</strong>；</p>
+<p>rtrim(‘abc ‘) 返回：’abc’;</p>
+<p><strong>TRIM:去除左右两边的空格;</strong> </p>
+<p>trim(‘ ABC ‘) 返回’ABC’;</p>
+<p><strong>REPLACE:替换；</strong></p>
+<p>replace(‘abcccd’,’c’,’x’) 将字符串中的c替换为x; 返回：’abxxxd’;</p>
+<p><strong>STRCMP:比较字符串;</strong></p>
+<p>strcmp(s1,s2);</p>
+<p><strong>SUBSTRING:截取字符串；</strong></p>
+<p>substring(‘johnson’,5,3) 从第五个位置开始截取长度为3的字符串。返回：’son’;</p>
 <h5 id="2-日期函数"><a href="#2-日期函数" class="headerlink" title="2.日期函数"></a>2.日期函数</h5><p>获得当前日期+时间(date+time)函数: now();</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT NOW();</span><br></pre></td></tr></table></figure>
 
@@ -385,12 +394,14 @@
 <h3 id="第五章模糊查询与分组查询"><a href="#第五章模糊查询与分组查询" class="headerlink" title="第五章模糊查询与分组查询"></a>第五章模糊查询与分组查询</h3><h5 id="1-模糊查询"><a href="#1-模糊查询" class="headerlink" title="1.模糊查询"></a>1.模糊查询</h5><p>1.使用like关键词进行模糊查询；</p>
 <p>表达式为：where 字段 LIKE 通配符字符串；</p>
 <p>2.常用的通配符还有”%”、”_”;</p>
-<h6 id="用于通配多个字符；表示了0-n个任意字符。"><a href="#用于通配多个字符；表示了0-n个任意字符。" class="headerlink" title="%用于通配多个字符；表示了0~n个任意字符。"></a>%用于通配多个字符；表示了0~n个任意字符。</h6><p>例如: 王%代表以”王”开头的任意字符串;</p>
+<p><strong>%用于通配多个字符；表示了0~n个任意字符</strong>。</p>
+<p>例如: 王%代表以”王”开头的任意字符串;</p>
 <p>​         “%了”代表了以”了”结尾的字符串;</p>
 <p>查询studentinfo表中所以姓李的所有学生信息。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from studentinfo where studentname like&apos;李%&apos;;</span><br></pre></td></tr></table></figure>
 
-<h6 id="用于通配单个字符，表示一个字符；"><a href="#用于通配单个字符，表示一个字符；" class="headerlink" title="_用于通配单个字符，表示一个字符；"></a>_用于通配单个字符，表示一个字符；</h6><p>若需要表示两个字符的匹配，则需要使用两个”_”通配符；</p>
+<p><strong>_用于通配单个字符，表示一个字符；</strong></p>
+<p>若需要表示两个字符的匹配，则需要使用两个”_”通配符；</p>
 <p>例如：</p>
 <p>“刘_”代表了以刘开头的单个字符串；</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select studentid,studentname,studentsex from studentinfo where studentname like&apos;刘_&apos;;</span><br><span class="line"></span><br><span class="line">返回：201806370236 刘英 女；</span><br></pre></td></tr></table></figure>
