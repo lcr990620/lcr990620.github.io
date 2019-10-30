@@ -328,9 +328,9 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select distinct classid from stuinfo;</span><br></pre></td></tr></table></figure>
 
 <p>8.使用order by关键词进行排序；</p>
-<p>order by 字段 asc(desc);</p>
-<p>asc:升序，可以省略；</p>
-<p>desc:降序；</p>
+<p><strong>order by 字段 asc(desc);</strong></p>
+<p><strong>asc:升序，可以省略；</strong></p>
+<p><strong>desc:降序；</strong></p>
 <p>例如：</p>
 <p>单列排序：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from stuinfo order by score;</span><br></pre></td></tr></table></figure>
@@ -383,11 +383,11 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT WEEKDAY(CURDATE());</span><br></pre></td></tr></table></figure>
 
 <p>1表示周日，2表示周一，3表示周二，4表示周三，5表示周四，6表示周五，7表示周六；</p>
-<h5 id="3-系统函数"><a href="#3-系统函数" class="headerlink" title="3.系统函数"></a>3.系统函数</h5><p>DATABASE();返回当前数据库名；</p>
-<p>BENCHMARK(count,expr);将表达式expr重复运行count次；</p>
-<p>CONNECTION_ID();返回当前客户的ID；</p>
-<p>FOUND_ROWS();返回最后一个select查询进行检索的总行数；</p>
-<p>VERSION();返回MySQL服务器的版本；</p>
+<h5 id="3-系统函数"><a href="#3-系统函数" class="headerlink" title="3.系统函数"></a>3.系统函数</h5><p><strong>DATABASE();返回当前数据库名；</strong></p>
+<p><strong>BENCHMARK(count,expr);将表达式expr重复运行count次；</strong></p>
+<p><strong>CONNECTION_ID();返回当前客户的ID；</strong></p>
+<p><strong>FOUND_ROWS();返回最后一个select查询进行检索的总行数；</strong></p>
+<p><strong>VERSION();返回MySQL服务器的版本</strong>；</p>
 <p>例如：返回当前的数据库名和版本；</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select detabase(),version();</span><br></pre></td></tr></table></figure>
 
