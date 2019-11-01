@@ -173,8 +173,8 @@
         <div class="row col-md-offset-2">
             <div class="col-md-8">
     			<span class="post-meta">
-      <time datetime="2019-10-30T11:12:53.931Z" itemprop="datePublished">
-          2019-10-30
+      <time datetime="2019-11-01T01:58:39.778Z" itemprop="datePublished">
+          2019-11-01
       </time>
     
 </span>
@@ -182,110 +182,137 @@
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-      		<h3 id="第五章模糊查询与分组查询"><a href="#第五章模糊查询与分组查询" class="headerlink" title="第五章模糊查询与分组查询"></a>第五章模糊查询与分组查询</h3><h5 id="1-模糊查询"><a href="#1-模糊查询" class="headerlink" title="1.模糊查询"></a>1.模糊查询</h5><p>1.使用like关键词进行模糊查询；</p>
-<p>表达式为：where 字段 LIKE 通配符字符串；</p>
-<p>2.常用的通配符还有”%”、”_”;</p>
-<p><strong>%用于通配多个字符；表示了0~n个任意字符</strong>。</p>
-<p>例如: 王%代表以”王”开头的任意字符串;</p>
-<p>​         “%了”代表了以”了”结尾的字符串;</p>
-<p>查询studentinfo表中所以姓李的所有学生信息。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from studentinfo where studentname like&apos;李%&apos;;</span><br></pre></td></tr></table></figure>
+      		<hr>
+<h2 id="title：JSP前两章总结"><a href="#title：JSP前两章总结" class="headerlink" title="title：JSP前两章总结;"></a>title：JSP前两章总结;</h2><h3 id="第一章-项目准备"><a href="#第一章-项目准备" class="headerlink" title="第一章 项目准备"></a>第一章 项目准备</h3><h4 id="1-动态网页基础介绍"><a href="#1-动态网页基础介绍" class="headerlink" title="1.动态网页基础介绍"></a>1.动态网页基础介绍</h4><p>1.什么是动态网页？</p>
+<p>动态网页是指在服务器端运行的使用程序语言设计的交互式网页，他们会根据某种条件的变化，返回不同的网页内容；</p>
+<p>2.什么是URL？</p>
+<p>URL是统一资源定位符，是用于完整的描述internet上网页和其他资源的地址的一种标识方法，简单来说就是“网址”；</p>
+<p>3.URL的组成</p>
+<p>协议，服务器域名或IP地址，端口号。</p>
+<h4 id="2-使用Tomcat"><a href="#2-使用Tomcat" class="headerlink" title="2.使用Tomcat"></a>2.使用Tomcat</h4><p>1.Tomcat服务器是一个免费的开源的web服务器，也就是平常说的网站服务器软件。</p>
+<p>2.Tomcat安装百度上面有，在这里就不给大家说了；</p>
+<p>3.关于Tomcat解压版本的启动和停止</p>
+<p>（1）进入Tomcat在本地安装目录下的子目录bin，选择“startup.bat”选项启动Tomcat，选择“shoutdown.bat”选项关闭Tomcat。</p>
+<p>（2）确认Tomcat启动是否成功，可以通过访问浏览器的方式进行检测，在浏览器中输入“<a href="http://localhost:8080”进行测试，如果启动成功，会看到Tomcat的欢迎界面；" target="_blank" rel="noopener">http://localhost:8080”进行测试，如果启动成功，会看到Tomcat的欢迎界面；</a></p>
+<p>（3）当Tomcat安装完毕后，Tomcat目录下会存在若干个子目录，包括bin,conf,lib,logs,temp,webapps,work,分别存放不同作用的文件；</p>
+<h4 id="3-Tomcat的目录结构"><a href="#3-Tomcat的目录结构" class="headerlink" title="3.Tomcat的目录结构"></a>3.Tomcat的目录结构</h4><table>
+<thead>
+<tr>
+<th>目录</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>/bin</td>
+<td>存放各种平台下用于启动和停止Tomcat的脚本文件</td>
+</tr>
+<tr>
+<td>/conf</td>
+<td>存放Tomcat服务器的各种配置文件</td>
+</tr>
+<tr>
+<td>/lib</td>
+<td>存放Tomcat服务器所需的各种JAR文件</td>
+</tr>
+<tr>
+<td>/logs</td>
+<td>存放Tomcat的日志文件</td>
+</tr>
+<tr>
+<td>/temp</td>
+<td>Tomcat运行时用于存放临时文件</td>
+</tr>
+<tr>
+<td>/webapps</td>
+<td>Web应用的发布目录</td>
+</tr>
+<tr>
+<td>/work</td>
+<td>Tomcat把由JSP生成的Servlet存放于此目录下</td>
+</tr>
+</tbody></table>
+<h3 id="第二章-进入项目"><a href="#第二章-进入项目" class="headerlink" title="第二章 进入项目"></a>第二章 进入项目</h3><h4 id="4-JPS中的注释"><a href="#4-JPS中的注释" class="headerlink" title="4.JPS中的注释"></a>4.JPS中的注释</h4><p>(1)HTML注释方法:</p>
+<p>格式<!--HTML注释-->这种注释方法是不安全的，而且会加大网络传输的负担。</p>
+<p>(2)JPS注释标记：</p>
+<p>格式&lt;%–JSP 注释–%&gt;安全性比较高。</p>
+<p>(3)在JPS脚本中使用注释：</p>
+<p>格式&lt;%//单行注释%&gt;，&lt;%/<em>多行注释术</em>/%&gt;  </p>
+<h4 id="2-JPS中的注释"><a href="#2-JPS中的注释" class="headerlink" title="2.JPS中的注释"></a>2.JPS中的注释</h4><p>(1)HTML注释方法:</p>
+<p>格式<!--HTML注释-->这种注释方法是不安全的，而且会加大网络传输的负担。</p>
+<p>(2)JPS注释标记：</p>
+<p>格式&lt;%–JSP 注释–%&gt;安全性比较高。</p>
+<p>(3)在JPS脚本中使用注释：</p>
+<p>格式&lt;%//单行注释%&gt;，&lt;%/<em>多行注释术</em>/%&gt;   </p>
+<h4 id="3-JSP指令元素"><a href="#3-JSP指令元素" class="headerlink" title="3.JSP指令元素"></a>3.JSP指令元素</h4><p>JSP指令元素的作用是通过设置指令中的属性，控制JSP页面的某些特性。JSP指令一般以”&lt;%@”开始，以”%&gt;”结束。</p>
+<p>例：</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">"java"</span> <span class="keyword">import</span>=<span class="string">"java.util.*,java.text.*"</span></span><br><span class="line">contentType=<span class="string">"text/html; charset=UTF-8"</span> %&gt;</span><br></pre></td></tr></table></figure>
 
-<p><strong>_用于通配单个字符，表示一个字符；</strong></p>
-<p>若需要表示两个字符的匹配，则需要使用两个”_”通配符；</p>
-<p>例如：</p>
-<p>“刘_”代表了以刘开头的单个字符串；</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select studentid,studentname,studentsex from studentinfo where studentname like&apos;刘_&apos;;</span><br><span class="line"></span><br><span class="line">返回：201806370236 刘英 女；</span><br></pre></td></tr></table></figure>
+<p>(1)什么是page指令？</p>
+<p>page指令是针对当前页面进行设置的一种指令，通常位于JSP页面的顶端。需要注意的是page指令只对当前JSP页面有效，但是在一个JSP页面中可以包含多个指令。</p>
+<p>例：</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page属性<span class="number">1</span>=<span class="string">"属性值"</span>属性<span class="number">2</span>=<span class="string">"属性值1，属性值2"</span>......属性n=<span class="string">"属性值"</span>%&gt;</span><br></pre></td></tr></table></figure>
 
-<h5 id="2-聚合函数"><a href="#2-聚合函数" class="headerlink" title="2.聚合函数"></a>2.聚合函数</h5><p><strong>sum()函数用于对数据求总和；</strong></p>
-<p><strong>avg()函数用于求平均数；</strong></p>
-<p><strong>max()函数用于求最大值；</strong></p>
-<p><strong>min()函数用于求最小值；</strong></p>
-<p><strong>count()函数用于求个数；</strong></p>
-<p><strong>count(字段)：计算查询结果中指定字段的总行数，在字段为null时，不会统计个数；</strong></p>
-<p><strong>count(*)：计算数据表或查询结果集的总行数，不管某一列或多列是否为空值；</strong></p>
-<p>例如：</p>
-<p>如果查询结果有20条，但A字段有3个空值，那么count(A)的结果就是17；count(*)的结果就是20;</p>
-<h5 id="3-分组查询"><a href="#3-分组查询" class="headerlink" title="3.分组查询"></a>3.分组查询</h5><p>1.使用Group By进行数据分组查询；</p>
-<p>按班级进行分组</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from student group by class;</span><br></pre></td></tr></table></figure>
+<p>(2)page指令常用属性</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>language</td>
+<td>制定JSP页面使用的脚本语言，默认为”java”</td>
+</tr>
+<tr>
+<td>import</td>
+<td>通过该属性引用脚本语言中使用到的类文件</td>
+</tr>
+<tr>
+<td>contentType</td>
+<td>用于指定MIME类型和JSP页面回应时所采用的字符编码方式，默认为”text/html;charset=ISO-8859-1”</td>
+</tr>
+</tbody></table>
+<p>1)language属性：page指令中的language属性用于指定当前JSP页面所采用的脚本语言，当前JSP版本只能使用Java作为脚本语言。该属性不可以设置，因为JSP默认就是采用Java作为脚本。</p>
+<p>language属性的设置方法是&lt;%@page language=”java”%&gt;</p>
+<p>2)import属性：page指令中的import属性在实际开发中的使用比较频繁。通过import属性可以在JSP文件的脚本片段中引用类。</p>
+<p>例：</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page <span class="keyword">import</span>=<span class="string">"java.util.*, java.text.*"</span>%&gt;</span><br></pre></td></tr></table></figure>
 
-<p>在分组结果，只有聚合函数和被分组的列有意义；</p>
-<p>2.多列分组查询</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from student group by class,id;</span><br></pre></td></tr></table></figure>
+<p>或者</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page <span class="keyword">import</span>=<span class="string">"java.util.*"</span>%&gt;</span><br><span class="line">&lt;%@ page <span class="keyword">import</span>=<span class="string">"java.text.*"</span>%&gt;</span><br></pre></td></tr></table></figure>
 
-<p>3.使用Having字句分组查询的条件筛选；</p>
-<p>例如：班级人数大于3的班级。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select count(*),class from student group by class having count(*)&gt;3;</span><br></pre></td></tr></table></figure>
+<p>3)contentType属性：这个设置告诉Web容器在客户端浏览器上以何种格式以及使用何种编码方式显示响应的内容。</p>
+<p>例：</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page contentType=<span class="string">"text/html;charset=UTF-8"</span>%&gt;</span><br></pre></td></tr></table></figure>
 
-<h3 id="第六章多表连接查询"><a href="#第六章多表连接查询" class="headerlink" title="第六章多表连接查询"></a>第六章多表连接查询</h3><h5 id="1-连接查询"><a href="#1-连接查询" class="headerlink" title="1.连接查询"></a>1.连接查询</h5><p>常用的连接查询有：内连接，外连接，交叉连接；</p>
-<p>1.交叉连接是将多张表中的数据一一对应连接在一起，形成结果集的数据相当于多张表的数据行数“相乘”之后的结果。</p>
-<p>交叉表中没有where字句；</p>
-<p>例如：将T_A表名改成A表，把T_B表名改成B表，并查询两个表中的所有信息；</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select A.*,B.* from T_A AS A,T_B AS B;</span><br></pre></td></tr></table></figure>
+<h4 id="4-JSP脚本元素"><a href="#4-JSP脚本元素" class="headerlink" title="4.JSP脚本元素"></a>4.JSP脚本元素</h4><p>在JSP页面中，将表达式，小脚本，声明统称为JSP脚本元素，用于在JSP页面中嵌入Java代码，实现页面的动态请求。</p>
+<p>(1)什么是小脚本</p>
+<p>小脚本可以包含任意的Java片段，形式比较灵活，通过JSP页面中编写小脚本可以执行复杂的操作和业务处理。</p>
+<p>示例：</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;%<span class="comment">//显示年龄%&gt;</span></span><br><span class="line">&lt;%</span><br><span class="line">  <span class="keyword">int</span> age=<span class="number">18</span>;</span><br><span class="line">  <span class="keyword">if</span>(age&gt;=<span class="number">18</span>)&#123;</span><br><span class="line">     out.println(<span class="string">"成年人"</span>);</span><br><span class="line">  &#125;esle&#123;</span><br><span class="line">     out.println(<span class="string">"未成年人"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">%&gt;</span><br></pre></td></tr></table></figure>
 
-<p>实际上，select语句中可以实现两张表以上的表的连接查询，其创建规则与两个表连接相同，只需要在where条件中增加一个AND复合条件；</p>
-<p>例如：三张表，学生姓名存放于studentinfo表中，科目名称存放于subject表中，考试成绩存放于exam表中</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select s.studentname,sub.subjectname,e.exam from studentinfo as s,subject as sub,exam as e </span><br><span class="line">where s.studentid=e.studentid and sub.subjectid=e.subjectid;</span><br></pre></td></tr></table></figure>
+<p>(2)什么是表达式</p>
+<p>表达式是对数据的表示，系统将其作为一个值进行计算和显示。当需要在页面中获取一个Java变量或者表达式值时，使用表达式是非常方便的。语法是&lt;%=Java表达式%&gt;。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">"java"</span> contentType=<span class="string">"text/html;charset=UTF-8"</span>%&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;title&gt;输出数组中的元素&lt;/title&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;%</span><br><span class="line">        <span class="keyword">int</span>[] value=&#123;<span class="number">60</span>,<span class="number">70</span>,<span class="number">80</span>&#125;;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i:value)&#123;</span><br><span class="line">        %&gt; </span><br><span class="line">        &lt;%=i%&gt;&lt;br/&gt;</span><br><span class="line">        &lt;%&#125;%&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
 
-<p>2.内连接分为三种：等值连接，自然连接，不等连接；</p>
-<p>语法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select 字段 from 表1 inner join 表2 on&lt;表达式&gt;;</span><br></pre></td></tr></table></figure>
-
-<p>例如：查询每个学生的姓名，年龄，性别和所在班级名称</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select s.name,s.age,s.gender,c.classname from student as s inner join classinfo as c on s.classid=c.classid;</span><br></pre></td></tr></table></figure>
-
-<p>3.外连接：分为左外链接，右外连接和全外连接三种；</p>
-<p>左外链接</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select 字段 from 表1 left outer join 表2 on&lt;表达式&gt;</span><br></pre></td></tr></table></figure>
-
-<p>右外连接</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select 字段 from 表1 right outer join 表2 on&lt;表达式&gt;</span><br></pre></td></tr></table></figure>
-
-<p>全外连接</p>
-<p>注意：MySQL是不支持全外连接的。</p>
-<h3 id="第七章SQL高级子查询"><a href="#第七章SQL高级子查询" class="headerlink" title="第七章SQL高级子查询"></a>第七章SQL高级子查询</h3><h4 id="7-1简单子查询"><a href="#7-1简单子查询" class="headerlink" title="7.1简单子查询"></a>7.1简单子查询</h4><h5 id="一．什么是子查询？"><a href="#一．什么是子查询？" class="headerlink" title="一．什么是子查询？"></a>一．什么是子查询？</h5><p>所谓子查询，是指包含在一个INSERT、DELETE、UPDATE、SELECT命令中的SELECT查询。</p>
-<p>也可以理解为增删改查命令中嵌套着查询命令。</p>
-<h5 id="二．子查询在WHERE语句中的一般用法："><a href="#二．子查询在WHERE语句中的一般用法：" class="headerlink" title="二．子查询在WHERE语句中的一般用法："></a>二．子查询在WHERE语句中的一般用法：</h5><p>SELECT … FROM 表1 WHERE 字段1 &gt;(子查询)，外面的查询称为父查询，括号中嵌入的查询称为子查询 ，UPDATE、INSERT、DELETE一起使用，语法类似于SELECT语句</p>
-<p>将子查询和比较运算符联合使用，必须保证子查询返回的值不能多于一个；</p>
-<h4 id="7-2-高级子查询"><a href="#7-2-高级子查询" class="headerlink" title="7.2 高级子查询"></a>7.2 高级子查询</h4><h5 id="一．EXISTS子查询"><a href="#一．EXISTS子查询" class="headerlink" title="一．EXISTS子查询"></a>一．EXISTS子查询</h5><p>如果子查询的结果非空，即记录条数1条以上，则EXISTS （子查询）将返回真（true），否则返回假(false) ，EXISTS也可以作为WHERE 语句的子查询，但一般都能用IN子查询替换</p>
-<p>通过在子查询中使用EXISTS子句，可以对子查询中的行是否存在进行检查</p>
-<h5 id="二-使用IN和NOT-IN的子查询"><a href="#二-使用IN和NOT-IN的子查询" class="headerlink" title="二.使用IN和NOT IN的子查询"></a>二.使用IN和NOT IN的子查询</h5><p>1.IN子查询</p>
-<p>IN子查询后面可跟随返回多条记录的子查询，用于检测某列的值是否在某个范围；</p>
-<p>–使用IN后面的子查询可以返回多条记录。常用IN替换等于(=)的比较子查询 </p>
-<p>IN：在指定项内，同 IN(项1,项2,…)。</p>
-<p><strong>Select StudentName from Students where StudentId IN</strong><br><strong>(Select StudentId from ScoreList where SQLServerDB&gt;80)</strong></p>
-<p>2.NOT IN 子查询</p>
-<p>–查询没有参加考试的学员、姓名？</p>
-<p><strong>Select StudentName from Students where studentId not in</strong><br><strong>(Select StudentId from ScoreList where SQLServerDB&gt;80)</strong></p>
-<p><strong>注意：</strong></p>
-<p>‘IN’ 是 ‘= ANY’ 的简写，’NOT IN’ 是 ‘&lt;&gt; ALL’ 的简写;</p>
-<h5 id="三-使用ALL-ANY-SOME的子查询"><a href="#三-使用ALL-ANY-SOME的子查询" class="headerlink" title="三.使用ALL,ANY/SOME的子查询"></a>三.使用ALL,ANY/SOME的子查询</h5><p>在使用子查询语句的过程中经常使用<code>ANY</code>、<code>SOME</code>、<code>ALL</code>（另外还有一个<code>IN</code>）关键字作为筛选条件。</p>
-<p><strong>ANY，SOME，ALL关键字的使用</strong></p>
-<p>1.ANY：与比较操作符联合使用，表示与子查询返回的任何值比较为 TRUE ，则返回 TRUE 。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT s1 FROM table1 WHERE s1 &gt; ANY (SELECT s2 FROM table2)</span><br></pre></td></tr></table></figure>
-
-<p> 2.ALL：与比较操作符联合使用，表示与子查询返回的所有值比较都为 TRUE ，则返回 TRUE 。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT s1 FROM table1 WHERE s1 &gt; ALL (SELECT s2 FROM table2)</span><br></pre></td></tr></table></figure>
-
-<p><strong>特殊情况:</strong></p>
-<p>如果 table2 为空表，则 ALL 后的结果为 TRUE；</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT s1 FROM table1 WHERE s1 &gt; (SELECT s2 FROM table2)SELECT s1 FROM table1 WHERE s1 &gt; ALL (SELECT MAX(s1) FROM table2)</span><br></pre></td></tr></table></figure>
-
-<p>3.SOME：ANY 的别名，较少使用。</p>
+<h4 id="5-Web项目部署运行中常见错误"><a href="#5-Web项目部署运行中常见错误" class="headerlink" title="5.Web项目部署运行中常见错误"></a>5.Web项目部署运行中常见错误</h4><p>(1)未启动Tomcat服务，或者没有在预期的端口中启动Tomcat服务。</p>
+<p>(2)未部署Web应用，就是运行Web程序。</p>
+<p>(3)运行时，URL输入错误。</p>
+<p>(4)目录不能被引用。</p>
 
             <div class="clearfix"></div>
             <hr class="nogutter">
         </div>
         <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
     
-    <a class="pull-left" href="/2019/11/01/jdbc连接数据库的步骤/" style="float: left;">
-        ← JDBC连接数据库的步骤
+    <a class="pull-left" href="/2019/11/01/JSP1-2章示例/" style="float: left;">
+        ← 
     </a>
     
     
-    <a class="pull-right" href="/2019/10/30/MySQL1-4章总结/">
-         →
+    <a class="pull-right" href="/2019/11/01/jdbc连接数据库的步骤/">
+        JDBC连接数据库的步骤 →
     </a>
     
 </nav>
