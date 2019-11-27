@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>EL表达式 | Hexo</title>
+  <title>JSTL | Hexo</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -173,27 +173,113 @@
         <div class="row col-md-offset-2">
             <div class="col-md-8">
     			<span class="post-meta">
-      <time datetime="2019-11-21T06:37:31.949Z" itemprop="datePublished">
-          2019-11-21
+      <time datetime="2019-11-25T16:00:00.000Z" itemprop="datePublished">
+          2019-11-26
       </time>
     
 </span>
-                <h1>EL表达式</h1>
+                <h1>JSTL</h1>
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-      		<h5 id="1-el表达式-Expression-Language）"><a href="#1-el表达式-Expression-Language）" class="headerlink" title="1.el表达式(Expression Language）"></a>1.el表达式(Expression Language）</h5><p>   el表达式：是为了使JSP写起来更加简单;</p>
-<p>以MVC模式设计程序,JSP只是<a href="https://baike.baidu.com/item/%E8%A7%86%E5%9B%BE/1302820" target="_blank" rel="noopener">视图</a>，视图的任务就是显示响应，而不是在JSP中做任何关于程序控制和业务逻辑的事情。所以在JSP页面中应该尽可能少的、或者是完全不出现Java代码。</p>
-<h5 id="2-EL语法"><a href="#2-EL语法" class="headerlink" title="2.EL语法"></a>2.EL语法</h5><p>在JSP中访问模型对象是通过EL表达式的语法来表达。所有EL表达式的格式都是以“${}”表示。</p>
-<h5 id="3-与-运算符"><a href="#3-与-运算符" class="headerlink" title="3.[ ]与.运算符"></a>3.[ ]与.运算符</h5><p>EL 提供“.“和“[ ]“两种运算符来存取数据。</p>
-<p>当要存取的属性名称中包含一些特殊字符，如 . 或 - 等并非字母或数字的符号，就一定要使用“[ ]“。例如：</p>
-<p>${ user. My-Name}应当改为${user[“My-Name”]}</p>
-<p>如果要动态取值时，就可以用“[ ]“来做，而“.“无法做到动态取值。例如：</p>
-<p>${sessionScope.user[data]}中data 是一个变量</p>
-<h5 id="4-变量"><a href="#4-变量" class="headerlink" title="4.变量"></a>4.变量</h5><p>EL存取变量数据的方法很简单，例如：${username}。它的意思是取出某一范围中名称为username的变量。</p>
-<p>因为我们并没有指定哪一个范围的username，所以它会依序从Page、Request、Session、Application范围查找。</p>
-<p>代码：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">&lt;%<span class="meta">@page</span> <span class="keyword">import</span>=<span class="string">"java.util.HashMap"</span>%&gt;</span><br><span class="line">&lt;%<span class="meta">@page</span> <span class="keyword">import</span>=<span class="string">"java.util.ArrayList"</span>%&gt;</span><br><span class="line">&lt;%@ page language=<span class="string">"java"</span> contentType=<span class="string">"text/html; charset=UTF-8"</span></span><br><span class="line">    pageEncoding=<span class="string">"UTF-8"</span>%&gt;</span><br><span class="line">&lt;!DOCTYPE html PUBLIC <span class="string">"-//W3C//DTD HTML 4.01 Transitional//EN"</span> <span class="string">"http://www.w3.org/TR/html4/loose.dtd"</span>&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta http-equiv=<span class="string">"Content-Type"</span> content=<span class="string">"text/html; charset=UTF-8"</span>&gt;</span><br><span class="line">&lt;title&gt;Insert title here&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;%--用el表达式完成运算 --%&gt;</span><br><span class="line">    $&#123;<span class="number">123</span>+<span class="number">124</span>&#125;</span><br><span class="line">    $&#123;<span class="number">123</span>*<span class="number">124</span>&#125;</span><br><span class="line">    $&#123;<span class="number">5</span>&gt;<span class="number">18</span>&#125;</span><br><span class="line">    $&#123;<span class="number">5</span>&gt;<span class="number">3</span>&amp;&amp;<span class="number">3</span>&gt;<span class="number">5</span>&#125;</span><br><span class="line">    $&#123;<span class="number">15</span>&gt;<span class="number">12</span> and <span class="number">13</span>&lt;<span class="number">14</span>&#125;</span><br><span class="line">    $&#123;<span class="number">12</span>&lt;<span class="number">11</span> or <span class="number">11</span>&gt;<span class="number">8</span>&#125;</span><br><span class="line">    $&#123;<span class="number">5</span>!=<span class="number">3</span>&#125;</span><br><span class="line">    &lt;%--empty运算符的使用 --%&gt;</span><br><span class="line">    &lt;%</span><br><span class="line">       String str=<span class="keyword">null</span>;</span><br><span class="line">    %&gt;</span><br><span class="line">    $&#123;empty str&#125;</span><br><span class="line">    $&#123;not empty str&#125;</span><br><span class="line">    &lt;%--用el表达式获取域对象的数据--%&gt;</span><br><span class="line">    &lt;%</span><br><span class="line">      request.setAttribute(<span class="string">"ell"</span>, <span class="string">"good night"</span>);</span><br><span class="line">      String ell=(String)request.getAttribute(<span class="string">"ell"</span>);</span><br><span class="line">      out.write(ell);</span><br><span class="line">    %&gt; </span><br><span class="line">    $&#123;ell&#125;</span><br><span class="line">    &lt;%--会从四个域对象中，一个一个找ell属性</span><br><span class="line">          先找 pageContext是否有ell属性，如果有就停止查找</span><br><span class="line">    直接输出ell属性对应的内容。如果没有继续查找request</span><br><span class="line">    对象中是否有ell属性，以此类推，直到查找到为止--%&gt;</span><br><span class="line">    $&#123;requestScope.ell&#125;</span><br><span class="line">    &lt;%--以上是只查找request对象的属性 --%&gt; </span><br><span class="line">    $&#123;sessionScope.ell&#125;</span><br><span class="line">    $&#123;applicationScope.ell&#125;</span><br><span class="line">    &lt;%--el表达式获取集合数组中的数据--%&gt;</span><br><span class="line">    &lt;%</span><br><span class="line">      ArrayList&lt;String&gt; list=<span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">      list.add(<span class="string">"abc"</span>);</span><br><span class="line">      list.add(<span class="string">"bbb"</span>);</span><br><span class="line">      list.add(<span class="string">"ccc"</span>);</span><br><span class="line">      HashMap&lt;String,String&gt; map=<span class="keyword">new</span> HashMap&lt;String,String&gt;();</span><br><span class="line">      map.put(<span class="string">"aa"</span>, <span class="string">"moring"</span>);</span><br><span class="line">      map.put(<span class="string">"bb"</span>,<span class="string">"afternoon"</span>);</span><br><span class="line">      map.put(<span class="string">"cc"</span>,<span class="string">"night"</span>);</span><br><span class="line">      request.setAttribute(<span class="string">"list1"</span>, list);</span><br><span class="line">      request.setAttribute(<span class="string">"map1"</span>, map);</span><br><span class="line">    %&gt;</span><br><span class="line">    $&#123;requestScope.list1[<span class="number">1</span>]&#125;</span><br><span class="line">    $&#123;map1.bb&#125;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+      		<h4 id="JSTL标签"><a href="#JSTL标签" class="headerlink" title="JSTL标签"></a>JSTL标签</h4><h5 id="1-简介"><a href="#1-简介" class="headerlink" title="1.简介"></a>1.简介</h5><p>JSP标准标签库<strong>（</strong>JSP Standard Tag Library）是Java EE网络应用程序开发平台的组成部分。它在JSP规范的基础上，扩充了一个JSP的标签库来完成一些通用任务，比如XML数据处理、条件执行、数据库访问、循环和国际化。</p>
+<ul>
+<li>需要导入此jar包</li>
+<li>jsp页面导入&lt;%@ taglib uri=”<a href="http://java.sun.com/jsp/jstl/core&quot;" target="_blank" rel="noopener">http://java.sun.com/jsp/jstl/core&quot;</a> prefix=”c” %&gt;</li>
+</ul>
+<h5 id="2-JSTL的使用及分类"><a href="#2-JSTL的使用及分类" class="headerlink" title="2.JSTL的使用及分类"></a>2.JSTL的使用及分类</h5><p>要使用JSTL，首先要先下载好jar包，点击这里进行下载，下载好后，导入项目的WEN-INF的lib目录下即可，当然，要在jsp中使用JSTL，还得使用@taglib标签，不过不同的分类情况不一样，下面我们来看看JSTL标签的分类。</p>
+<p>可以分为4大类和JSTL函数</p>
+<p>核心标签<br>格式化标签<br>SQL标签<br>XML标签<br>JSTL函数</p>
+<h5 id="3-标签介绍"><a href="#3-标签介绍" class="headerlink" title="3.标签介绍"></a>3.标签介绍</h5><p>c:if    </p>
+<p>c:foreach    </p>
+<p>c:choose</p>
+<p>(1)c:if标签属性<br>   test 必须属性，接受boolean表达式<br>   如果表达式为true，则显示if标签体内容，如果为false，则不显示<br>   标签体内容<br>    一般情况下，test属性值会结合el表达式一起使用</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+<th>是否必要</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>test</td>
+<td>条件</td>
+<td>是</td>
+<td>无</td>
+</tr>
+<tr>
+<td>var</td>
+<td>用于存储条件结果的变量</td>
+<td>否</td>
+<td>无</td>
+</tr>
+<tr>
+<td>scope</td>
+<td>var属性的作用域</td>
+<td>否</td>
+<td>page</td>
+</tr>
+</tbody></table>
+<p>代码案例：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;c:<span class="keyword">if</span> test=<span class="string">"true"</span>&gt;</span><br><span class="line">      &lt;%</span><br><span class="line">        out.write(<span class="string">"条件为真"</span>);</span><br><span class="line">      %&gt;</span><br><span class="line">   &lt;/c:if&gt;</span><br><span class="line">   &lt;c:<span class="keyword">if</span> test=<span class="string">"$&#123;15&gt;12&#125;"</span>&gt;</span><br><span class="line">      &lt;%</span><br><span class="line">        out.write(<span class="string">"条件为真1"</span>);</span><br><span class="line">      %&gt;</span><br><span class="line">   &lt;/c:if&gt;</span><br><span class="line">   &lt;%</span><br><span class="line">      String str=<span class="keyword">null</span>;</span><br><span class="line">   %&gt;</span><br><span class="line">   &lt;c:<span class="keyword">if</span> test=<span class="string">"$&#123;empty str&#125;"</span>&gt;</span><br><span class="line">      &lt;%</span><br><span class="line">         out.write(<span class="string">"天气变冷"</span>);</span><br><span class="line">      %&gt;</span><br><span class="line">   &lt;/c:if&gt;</span><br></pre></td></tr></table></figure>
+
+<p>(2)foreach标签属性</p>
+<p> 属性:<br>        items:获取被遍历的集合或数组<br>        var:临时变量,从集合中取出来的值，会赋值给此变量<br>        varStatus:循环状态对象</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+<th>是否必要</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>items</td>
+<td>要被循环的信息</td>
+<td>否</td>
+<td>无</td>
+</tr>
+<tr>
+<td>begin</td>
+<td>开始的元素(0=第一个元素,1=第二个元素)</td>
+<td>否</td>
+<td>0</td>
+</tr>
+<tr>
+<td>end</td>
+<td>最后一个元素(0=第一个元素,1=第二个元素)</td>
+<td>否</td>
+<td>Last element</td>
+</tr>
+<tr>
+<td>step</td>
+<td>每一次迭代的步长</td>
+<td>否</td>
+<td>1</td>
+</tr>
+<tr>
+<td>var</td>
+<td>代表当前条目的变量名称</td>
+<td>否</td>
+<td>无</td>
+</tr>
+<tr>
+<td>varStatus</td>
+<td>代表循环状态的变量名称</td>
+<td>否</td>
+<td>无</td>
+</tr>
+</tbody></table>
+<p>代码案例：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">     ArrayList&lt;String&gt; list=<span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">     list.add(<span class="string">"abc"</span>);</span><br><span class="line">     list.add(<span class="string">"bbb"</span>);</span><br><span class="line">     list.add(<span class="string">"ccc"</span>);</span><br><span class="line">     ArrayList&lt;User&gt; listu=<span class="keyword">new</span> ArrayList&lt;User&gt;();</span><br><span class="line">     User u=<span class="keyword">new</span> User(<span class="string">"张三"</span>,<span class="number">17</span>,<span class="string">"男"</span>);</span><br><span class="line">     User u1=<span class="keyword">new</span> User(<span class="string">"李四"</span>,<span class="number">18</span>,<span class="string">"女"</span>);</span><br><span class="line">     User u2=<span class="keyword">new</span> User(<span class="string">"王五"</span>,<span class="number">19</span>,<span class="string">"男"</span>);</span><br><span class="line">     listu.add(u);</span><br><span class="line">     listu.add(u1);</span><br><span class="line">     listu.add(u2);</span><br><span class="line">     request.setAttribute(<span class="string">"list1"</span>, list);</span><br><span class="line">     request.setAttribute(<span class="string">"list2"</span>, listu);</span><br><span class="line"></span><br><span class="line">  %&gt;</span><br><span class="line">  &lt;c:forEach items=<span class="string">"$&#123;list1&#125;"</span> <span class="keyword">var</span>=<span class="string">"i"</span> varStatus=<span class="string">"ls"</span>&gt;</span><br><span class="line">        $&#123;i&#125;</span><br><span class="line">  &lt;/c:forEach&gt;</span><br><span class="line">  &lt;table border=<span class="string">"1"</span>&gt;</span><br><span class="line">  &lt;tr&gt;</span><br><span class="line">      &lt;th&gt;姓名&lt;/th&gt; </span><br><span class="line">      &lt;th&gt;年龄&lt;/th&gt;</span><br><span class="line">      &lt;th&gt;性别&lt;/th&gt; </span><br><span class="line">  &lt;/tr&gt;</span><br><span class="line">  &lt;c:forEach items=<span class="string">"$&#123;list2&#125;"</span> <span class="keyword">var</span>=<span class="string">"i"</span> varStatus=<span class="string">"u"</span>&gt;</span><br><span class="line">       &lt;%--把取出来的值放到表格中 --%&gt;</span><br><span class="line">       &lt;tr&gt;</span><br><span class="line">           &lt;td&gt;$&#123;i.name&#125;&lt;/td&gt;</span><br><span class="line">           &lt;td&gt;$&#123;i.age&#125;&lt;/td&gt;</span><br><span class="line">           &lt;td&gt;$&#123;i.sex&#125;&lt;/td&gt;</span><br><span class="line">       &lt;/tr&gt;</span><br><span class="line">  &lt;/c:forEach&gt;</span><br></pre></td></tr></table></figure>
+
+<p>(3)c:choose标签</p>
+<p>  完成数字编号对应星期几案例<br>        1.域中存储一数字<br>        2.使用choose标签取出数字         相当于switch声明<br>        3.使用when标签做数字判断         相当于case<br>        4.otherwise标签做其他情况的声明  相当于default</p>
+<p>代码案例：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">    request.setAttribute(<span class="string">"a"</span>, <span class="number">7</span>);</span><br><span class="line"> %&gt;</span><br><span class="line"> &lt;c:choose&gt;</span><br><span class="line">  &lt;c:when test="$&#123;a==1&#125;"&gt;星期一&lt;/c:when&gt;</span><br><span class="line">  &lt;c:when test="$&#123;a==2&#125;"&gt;星期二&lt;/c:when&gt;</span><br><span class="line">  &lt;c:when test="$&#123;a==3&#125;"&gt;星期三&lt;/c:when&gt;</span><br><span class="line">  &lt;c:when test="$&#123;a==4&#125;"&gt;星期四&lt;/c:when&gt;</span><br><span class="line">  &lt;c:when test="$&#123;a==5&#125;"&gt;星期五&lt;/c:when&gt;</span><br><span class="line">  &lt;c:when test="$&#123;a==6&#125;"&gt;星期六&lt;/c:when&gt;</span><br><span class="line">  &lt;c:when test="$&#123;a==7&#125;"&gt;星期日&lt;/c:when&gt;</span><br><span class="line">  &lt;c:otherwise&gt;输入错误&lt;/c:otherwise&gt;</span><br><span class="line"> &lt;/c:choose&gt;</span><br></pre></td></tr></table></figure>
 
 
             <div class="clearfix"></div>
@@ -201,13 +287,9 @@
         </div>
         <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
     
-    <a class="pull-left" href="/2019/11/26/JSTL/" style="float: left;">
-        ← JSTL
-    </a>
     
-    
-    <a class="pull-right" href="/2019/11/21/用Servlet实现注册并连接数据库的功能/">
-        用Servlet实现注册并连接数据库的功能 →
+    <a class="pull-right" href="/2019/11/21/EL表达式/">
+        EL表达式 →
     </a>
     
 </nav>
