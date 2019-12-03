@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>EL表达式 | Hexo</title>
+  <title>jsp总结下 | Hexo</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -173,41 +173,100 @@
         <div class="row col-md-offset-2">
             <div class="col-md-8">
     			<span class="post-meta">
-      <time datetime="2019-11-21T06:37:31.949Z" itemprop="datePublished">
-          2019-11-21
+      <time datetime="2019-11-29T16:00:00.000Z" itemprop="datePublished">
+          2019-11-30
       </time>
     
 </span>
-                <h1>EL表达式</h1>
+                <h1>jsp总结下</h1>
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-      		<h5 id="1-el表达式-Expression-Language）"><a href="#1-el表达式-Expression-Language）" class="headerlink" title="1.el表达式(Expression Language）"></a>1.el表达式(Expression Language）</h5><p>   el表达式：是为了使JSP写起来更加简单;</p>
-<p>以MVC模式设计程序,JSP只是<a href="https://baike.baidu.com/item/%E8%A7%86%E5%9B%BE/1302820" target="_blank" rel="noopener">视图</a>，视图的任务就是显示响应，而不是在JSP中做任何关于程序控制和业务逻辑的事情。所以在JSP页面中应该尽可能少的、或者是完全不出现Java代码。</p>
-<h5 id="2-EL语法"><a href="#2-EL语法" class="headerlink" title="2.EL语法"></a>2.EL语法</h5><p>在JSP中访问模型对象是通过EL表达式的语法来表达。所有EL表达式的格式都是以“${}”表示。</p>
-<h5 id="3-与-运算符"><a href="#3-与-运算符" class="headerlink" title="3.[ ]与.运算符"></a>3.[ ]与.运算符</h5><p>EL 提供“.“和“[ ]“两种运算符来存取数据。</p>
-<p>当要存取的属性名称中包含一些特殊字符，如 . 或 - 等并非字母或数字的符号，就一定要使用“[ ]“。例如：</p>
-<p>${ user. My-Name}应当改为${user[“My-Name”]}</p>
-<p>如果要动态取值时，就可以用“[ ]“来做，而“.“无法做到动态取值。例如：</p>
-<p>${sessionScope.user[data]}中data 是一个变量</p>
-<h5 id="4-变量"><a href="#4-变量" class="headerlink" title="4.变量"></a>4.变量</h5><p>EL存取变量数据的方法很简单，例如：${username}。它的意思是取出某一范围中名称为username的变量。</p>
-<p>因为我们并没有指定哪一个范围的username，所以它会依序从Page、Request、Session、Application范围查找。</p>
-<p>代码：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">&lt;%<span class="meta">@page</span> <span class="keyword">import</span>=<span class="string">"java.util.HashMap"</span>%&gt;</span><br><span class="line">&lt;%<span class="meta">@page</span> <span class="keyword">import</span>=<span class="string">"java.util.ArrayList"</span>%&gt;</span><br><span class="line">&lt;%@ page language=<span class="string">"java"</span> contentType=<span class="string">"text/html; charset=UTF-8"</span></span><br><span class="line">    pageEncoding=<span class="string">"UTF-8"</span>%&gt;</span><br><span class="line">&lt;!DOCTYPE html PUBLIC <span class="string">"-//W3C//DTD HTML 4.01 Transitional//EN"</span> <span class="string">"http://www.w3.org/TR/html4/loose.dtd"</span>&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta http-equiv=<span class="string">"Content-Type"</span> content=<span class="string">"text/html; charset=UTF-8"</span>&gt;</span><br><span class="line">&lt;title&gt;Insert title here&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;%--用el表达式完成运算 --%&gt;</span><br><span class="line">    $&#123;<span class="number">123</span>+<span class="number">124</span>&#125;</span><br><span class="line">    $&#123;<span class="number">123</span>*<span class="number">124</span>&#125;</span><br><span class="line">    $&#123;<span class="number">5</span>&gt;<span class="number">18</span>&#125;</span><br><span class="line">    $&#123;<span class="number">5</span>&gt;<span class="number">3</span>&amp;&amp;<span class="number">3</span>&gt;<span class="number">5</span>&#125;</span><br><span class="line">    $&#123;<span class="number">15</span>&gt;<span class="number">12</span> and <span class="number">13</span>&lt;<span class="number">14</span>&#125;</span><br><span class="line">    $&#123;<span class="number">12</span>&lt;<span class="number">11</span> or <span class="number">11</span>&gt;<span class="number">8</span>&#125;</span><br><span class="line">    $&#123;<span class="number">5</span>!=<span class="number">3</span>&#125;</span><br><span class="line">    &lt;%--empty运算符的使用 --%&gt;</span><br><span class="line">    &lt;%</span><br><span class="line">       String str=<span class="keyword">null</span>;</span><br><span class="line">    %&gt;</span><br><span class="line">    $&#123;empty str&#125;</span><br><span class="line">    $&#123;not empty str&#125;</span><br><span class="line">    &lt;%--用el表达式获取域对象的数据--%&gt;</span><br><span class="line">    &lt;%</span><br><span class="line">      request.setAttribute(<span class="string">"ell"</span>, <span class="string">"good night"</span>);</span><br><span class="line">      String ell=(String)request.getAttribute(<span class="string">"ell"</span>);</span><br><span class="line">      out.write(ell);</span><br><span class="line">    %&gt; </span><br><span class="line">    $&#123;ell&#125;</span><br><span class="line">    &lt;%--会从四个域对象中，一个一个找ell属性</span><br><span class="line">          先找 pageContext是否有ell属性，如果有就停止查找</span><br><span class="line">    直接输出ell属性对应的内容。如果没有继续查找request</span><br><span class="line">    对象中是否有ell属性，以此类推，直到查找到为止--%&gt;</span><br><span class="line">    $&#123;requestScope.ell&#125;</span><br><span class="line">    &lt;%--以上是只查找request对象的属性 --%&gt; </span><br><span class="line">    $&#123;sessionScope.ell&#125;</span><br><span class="line">    $&#123;applicationScope.ell&#125;</span><br><span class="line">    &lt;%--el表达式获取集合数组中的数据--%&gt;</span><br><span class="line">    &lt;%</span><br><span class="line">      ArrayList&lt;String&gt; list=<span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">      list.add(<span class="string">"abc"</span>);</span><br><span class="line">      list.add(<span class="string">"bbb"</span>);</span><br><span class="line">      list.add(<span class="string">"ccc"</span>);</span><br><span class="line">      HashMap&lt;String,String&gt; map=<span class="keyword">new</span> HashMap&lt;String,String&gt;();</span><br><span class="line">      map.put(<span class="string">"aa"</span>, <span class="string">"moring"</span>);</span><br><span class="line">      map.put(<span class="string">"bb"</span>,<span class="string">"afternoon"</span>);</span><br><span class="line">      map.put(<span class="string">"cc"</span>,<span class="string">"night"</span>);</span><br><span class="line">      request.setAttribute(<span class="string">"list1"</span>, list);</span><br><span class="line">      request.setAttribute(<span class="string">"map1"</span>, map);</span><br><span class="line">    %&gt;</span><br><span class="line">    $&#123;requestScope.list1[<span class="number">1</span>]&#125;</span><br><span class="line">    $&#123;map1.bb&#125;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+      		<h1 id="JSP总结下"><a href="#JSP总结下" class="headerlink" title="JSP总结下"></a>JSP总结下</h1><h3 id="五、JSP中的注释"><a href="#五、JSP中的注释" class="headerlink" title="五、JSP中的注释"></a>五、JSP中的注释</h3><h5 id="1-java格式注释"><a href="#1-java格式注释" class="headerlink" title="1.java格式注释"></a>1.java格式注释</h5><p>​      编译器会忽略掉此类注释中的内容(客户端的源码看不见) </p>
+<p>​     </p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%-- JSP注释；可多行 --%&gt;</span><br></pre></td></tr></table></figure>
 
+<p>​    </p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%<span class="comment">// java 单行注释 %&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>​    </p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%<span class="comment">/* java multi lines comments */</span>%&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%<span class="comment">/**java 特有的注释*/</span>%&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-html风格注释"><a href="#2-html风格注释" class="headerlink" title="2.html风格注释"></a>2.html风格注释</h5><p>​      编译器会执行此类注释中的代码(客户端的源码看得见) </p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- html风格注释 --&gt;  等价于out.println(<span class="string">"&lt;!-- html风格注释 --&gt;"</span>)</span><br></pre></td></tr></table></figure>
+
+<p>​      这种注释方式不好的地方就是当页面注释信息太多的时候会增大服务器的负荷。</p>
+<p>​      还有注释信息需要在网络上传输，从而降低效率；内部程序员的测试数据一般不能写在这种注释中，以免泄露。</p>
+<h3 id="六、动作-Action"><a href="#六、动作-Action" class="headerlink" title="六、动作(Action)"></a>六、动作(Action)</h3><figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;jsp:actionName attributeName=attributeValue/&gt;</span><br></pre></td></tr></table></figure>
+
+<p>   JSP的动作包括：</p>
+<p>​     forward、include、useBean、setProperty、getProperty</p>
+<h5 id="1-forward动作"><a href="#1-forward动作" class="headerlink" title="1.forward动作"></a>1.forward动作</h5><p>​     形式：</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;jsp:forward page=<span class="string">"another.jsp"</span>/&gt;</span><br></pre></td></tr></table></figure>
+
+<p>​          等价于 Servlet中通过RequestDispatcher.forward();</p>
+<p>​     可以传参数</p>
+<p>​      </p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;jsp:forward  page=<span class="string">"another.jsp"</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<p>​          </p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;jsp:param name=<span class="string">"name"</span> value=<span class="string">"maxwell"</span>/&gt;</span><br></pre></td></tr></table></figure>
+
+<p>​           </p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;jsp:param name=<span class="string">"age"</span> value=<span class="string">"20"</span> /&gt;</span><br></pre></td></tr></table></figure>
+
+<p>​         </p>
+<h5 id="2-Include动作"><a href="#2-Include动作" class="headerlink" title="2.Include动作"></a>2.Include动作</h5><p>​     形式：</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;jsp:include page=<span class="string">"another.jsp"</span>/&gt;</span><br></pre></td></tr></table></figure>
+
+<p>​          等价于 Servlet中通过RequestDispatcher.include();</p>
+<p>​      Include动作也可以传参数</p>
+<p>​         </p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;jsp:include  page=<span class="string">"b.jsp"</span> flush=<span class="string">"true"</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<p>​          </p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;jsp:param name=<span class="string">"name"</span> value=<span class="string">"narci"</span>/&gt;</span><br></pre></td></tr></table></figure>
+
+<p>​           </p>
+<pre><code>###### 与&lt;%@include file=&quot;&quot;%&gt;比较：</code></pre><p>​         include动作在运行期处理(include指令编译期)，jsp:include包含的是所包含URI的响应，而不是URI本身。</p>
+<p>​         这意味着：jsp:include 对所指出的 URI 进行解释，因而包含的是生成的响应。</p>
+<p>​         对于页面是静态内容，这没有太大的关系。但如果是动态内容，include动作可传参数。</p>
+<pre><code>###### flush 属性</code></pre><p>​         flush 指示在读入包含内容之前是否清空任何现有的缓冲区。</p>
+<p>​         JSP 1.1 中需要 flush 属性，因此，如果代码中不用它，会得到一个错误。</p>
+<p>​         但是，在 JSP 1.2 中， flush 属性缺省为 false。</p>
+<p>​         建议：由于清空大多数时候不是一个重要的问题，因此，对于 JSP 1.1，将 flush 设置为 true；</p>
+<p>​              而对于 JSP 1.2 及更高版本，将其设置为 false 或不设置(用默认值)。</p>
+<h6 id="JSP的生命周期"><a href="#JSP的生命周期" class="headerlink" title="JSP的生命周期"></a>JSP的生命周期</h6><p>   1) 每一个JSP都会对应有一个servlet生成</p>
+<p>​    2) 在 %tomcat%/work/Catalina/localhost/工程名/org/apache/jsp 目录下可找到对应生成的 Servlet 文件</p>
+<p>​    3) 一般而言，每一个JSP对应的servlet都有如下的生命周期方法：</p>
+<h4 id="一、-jspInit-方法"><a href="#一、-jspInit-方法" class="headerlink" title="一、 _jspInit()方法"></a>一、 _jspInit()方法</h4><p>​    JSP容器第一次装载jsp文件时调用一次</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">_jspInit</span><span class="params">()</span></span>&#123;……&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="二、-jspService-方法"><a href="#二、-jspService-方法" class="headerlink" title="二、 _jspService()方法"></a>二、 _jspService()方法</h4><p>​    每当服务器接收到对该jsp的请求，都需要调用一次该方法一次。</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">_jspService</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">​       <span class="keyword">throws</span> java.io.IOException, ServletException </span>&#123; ……&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="三、-jspDestroy-方法"><a href="#三、-jspDestroy-方法" class="headerlink" title="三、 _jspDestroy()方法"></a>三、 _jspDestroy()方法</h4><p>​    jsp文件被修改时，JSP容器会销毁旧的jsp文件对应的对象，重新装载一次更新后的jsp文件的内容(只调用一次)。</p>
+<p>​    public void _jspDestroy(){……}</p>
+<h5 id="JSP处理过程：JSP源文件处理分成二个阶段："><a href="#JSP处理过程：JSP源文件处理分成二个阶段：" class="headerlink" title="JSP处理过程：JSP源文件处理分成二个阶段："></a><font color="red">JSP处理过程：JSP源文件处理分成二个阶段：</font></h5><p> 1) JSP页面转换阶段：</p>
+<p>​    页面被编译成一个Java类，所有的HTML标记和JSP标记都被转换创建一个Servlet。这时，脚本和表达式还没有被执行;</p>
+<p> 2) 请求处理阶段：发生在服务器，将一个客户端请求指向JSP页面。</p>
+<p>​    一个请求对象创建、解析以及提交给编译好的JSP对应的servlet。</p>
+<p>​    当这个servlet处理请求的时候它执行先前在JSP中定义的处理脚本小程序和表达式。</p>
+<h5 id="使用脚本代码的缺点和指导方针"><a href="#使用脚本代码的缺点和指导方针" class="headerlink" title="使用脚本代码的缺点和指导方针"></a><font color="red">使用脚本代码的缺点和指导方针</font></h5><p> 1) 缺点：</p>
+<p>​    a. 过度使用脚本代码使用JSP页面混乱和难以维护; </p>
+<p>​    b. 脚本代码降低JSP二个主要的优点：软件重用和代码分开</p>
+<p> 2) 指导方针：只在组件功能无能为力或需要有限的脚本时使用。</p>
 
             <div class="clearfix"></div>
             <hr class="nogutter">
         </div>
         <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
     
-    <a class="pull-left" href="/2019/11/25/js前部分总结(2)/" style="float: left;">
-        ← js前部分总结
-    </a>
     
-    
-    <a class="pull-right" href="/2019/11/21/用Servlet实现注册并连接数据库的功能/">
-        用Servlet实现注册并连接数据库的功能 →
+    <a class="pull-right" href="/2019/11/28/jsp总结上/">
+        jsp总结上 →
     </a>
     
 </nav>
