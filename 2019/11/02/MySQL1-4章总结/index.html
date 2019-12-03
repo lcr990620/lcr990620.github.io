@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>MySQL1-4章总结 | Hexo</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Hexo">
+    <meta name="author" content="John Doe">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    
+                    <li><a href="http://domain.com/" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">Hexo</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
+                            
+                            
+                            <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a></li>
+                            
+                            
+                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
+                            
+                            
+                            <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2019-11-01T16:00:00.000Z" itemprop="datePublished">
+          2019-11-02
+      </time>
+    
+</span>
+                <h1>MySQL1-4章总结</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h3 id="第一章MySQL基础"><a href="#第一章MySQL基础" class="headerlink" title="第一章MySQL基础"></a>第一章MySQL基础</h3><h4 id="1-数据库基本概念"><a href="#1-数据库基本概念" class="headerlink" title="1.数据库基本概念"></a>1.数据库基本概念</h4><p>1.数据库</p>
+<p>数据库就是数据表，数据库关系和数据库关系对象的集合。</p>
+<p>2.数据库管理系统（DBMS）</p>
+<p>数据库管理系统是一种操作和管理数据库的大型软件，用来建立，使用和维护数据库。他对数据库进行统一的管理和控制，以保证数据库的安全性和完整性；</p>
+<p>3.数据库系统（DBS）</p>
+<p>数据库系统是一个实际可运行的系统，是由存储介质，处理对象和管理系统组成的集合体，可以对系统提供的数据进行存储、维护和应用，它一般由软件、数据库和管理员组成；</p>
+<p>4.数据库管理员（DBA）</p>
+<p>负责创建数据库。监控数据库的运行，维护数据库的安全，优化数据库的性能，使数据库安全、稳定运行；</p>
+<p>5.数据库模型</p>
+<p>数据库模型分为层次模型、网状模型、关系模型和面向对象型；</p>
+<p>SQL Server是一个关系数据库管理系统，两亿以内中型数据库；</p>
+<p>Orade 2兆以内大型数据库；</p>
+<p>Access 2万以内小型数据库</p>
+<h3 id="2-数据库的操作"><a href="#2-数据库的操作" class="headerlink" title="2.数据库的操作"></a>2.数据库的操作</h3><p>(1)创建数据库</p>
+<p>CREATE DATABASE 数据库名;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; CREATE DATABASE stu;</span><br><span class="line">Query OK, 1 row affected</span><br></pre></td></tr></table></figure>
+
+<p>(2)进入数据库</p>
+<p>USE 数据库名;</p>
+<p>只有先进入数据库，才能进行下面的操作</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; USE stu;</span><br><span class="line">Database changed</span><br></pre></td></tr></table></figure>
+
+<p>(3)删除数据库</p>
+<p>DROP DATABASE 数据库名;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; DROP DATABASE stu;</span><br><span class="line">Query OK, 0 rows affected</span><br></pre></td></tr></table></figure>
+
+<p>(4)创建数据表</p>
+<p>CREATE TABLE 表名(字段1 类型,字段2 类型……..);</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; CREATE TABLE student(id int(10),name varchar(20));</span><br><span class="line">Query OK, 0 rows affected</span><br></pre></td></tr></table></figure>
+
+<p>(5)查询表的结构信息</p>
+<p>DESC 表名;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; DESC student;</span><br><span class="line">+-------+-------------+------+-----+---------+-------+</span><br><span class="line">| Field | Type        | Null | Key | Default | Extra |</span><br><span class="line">+-------+-------------+------+-----+---------+-------+</span><br><span class="line">| id    | int(10)     | YES  |     | NULL    |       |</span><br><span class="line">| name  | varchar(20) | YES  |     | NULL    |       |</span><br><span class="line">+-------+-------------+------+-----+---------+-------+</span><br><span class="line">2 rows in set</span><br></pre></td></tr></table></figure>
+
+<p>(6)查询表的创建信息</p>
+<p>SHOW CREATE TABLE 表名;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SHOW CREATE TABLE student;</span><br><span class="line">+---------+---------------------------------------------------------------------------------------------------------------------------+</span><br><span class="line">| Table   | Create Table                                                                                                              |</span><br><span class="line">+---------+---------------------------------------------------------------------------------------------------------------------------+</span><br><span class="line">| student | CREATE TABLE `student` (</span><br><span class="line">  `id` int(10) DEFAULT NULL,</span><br><span class="line">  `name` varchar(20) DEFAULT NULL</span><br><span class="line">) ENGINE=MyISAM DEFAULT CHARSET=utf8 |</span><br><span class="line">+---------+---------------------------------------------------------------------------------------------------------------------------+</span><br><span class="line">1 row in set</span><br></pre></td></tr></table></figure>
+
+<p>(7)删除表</p>
+<p>DROP TABLE 表名;</p>
+<h3 id="3-修改表结构"><a href="#3-修改表结构" class="headerlink" title="3.修改表结构"></a>3.修改表结构</h3><p>(1)修改表名</p>
+<p>ALTER TABLE 旧表名 RENAME 新表名;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; ALTER TABLE student RENAME studentinfo;</span><br><span class="line">Query OK, 0 rows affected</span><br></pre></td></tr></table></figure>
+
+<p>(2)修改数据类型</p>
+<p>ALTER TABLE 表名 MODIFY 字段名 新类型;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; ALTER TABLE studentinfo MODIFY id varchar(25);</span><br><span class="line">Query OK, 0 rows affected</span><br><span class="line">Records: 0  Duplicates: 0  Warnings: 0</span><br></pre></td></tr></table></figure>
+
+<p>(3)修改字段名</p>
+<p>ALTER TABLE 表名 CHANGE 旧字段名 新字段名 新数据类型;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; ALTER TABLE studentinfo CHANGE id stuID varchar(25);</span><br><span class="line">Query OK, 0 rows affected</span><br><span class="line">Records: 0  Duplicates: 0  Warnings: 0</span><br></pre></td></tr></table></figure>
+
+<p>(4)删除字段</p>
+<p>ALTER TABLE 表名 DROP 字段名;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; ALTER TABLE studentinfo DROP stuID;</span><br><span class="line">Query OK, 0 rows affected</span><br><span class="line">Records: 0  Duplicates: 0  Warnings: 0</span><br></pre></td></tr></table></figure>
+
+<p>(5)添加字段</p>
+<p>ALTER TABLE 表名 ADD 新字段名 新字段类型;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; ALTER TABLE studentinfo ADD id varchar(40);</span><br><span class="line">Query OK, 0 rows affected</span><br><span class="line">Records: 0  Duplicates: 0  Warnings: 0</span><br></pre></td></tr></table></figure>
+
+<h3 id="第二章-数据库和表的设计"><a href="#第二章-数据库和表的设计" class="headerlink" title="第二章 数据库和表的设计"></a>第二章 数据库和表的设计</h3><h4 id="1-数据约束"><a href="#1-数据约束" class="headerlink" title="1.数据约束"></a>1.数据约束</h4><h5 id="主键，外键，非空，默认，唯一；"><a href="#主键，外键，非空，默认，唯一；" class="headerlink" title="主键，外键，非空，默认，唯一；"></a>主键，外键，非空，默认，唯一；</h5><p>1.主键</p>
+<p>主键是表中一列或多列的组合，主键能唯一标识表中的一条记录；</p>
+<p>特性：非空且唯一；</p>
+<p>语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">字段名 数据类型 primary key[默认值];</span><br></pre></td></tr></table></figure>
+
+<p>(1)主键自增</p>
+<p>写在字段类型后面，主键前面；</p>
+<p>语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">字段名 数据类型 auto_increment primary key;</span><br></pre></td></tr></table></figure>
+
+<p>注意：主键自增，只增不减；</p>
+<p>2.外键</p>
+<p>外键的作用是在多张表的数据之间建立联系，确保多个表之间数据的一致性、完整性。</p>
+<p>(子表)从表的外键必须在主表的主键中出现写在创建语句最后面。</p>
+<p>语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[CONSTRAINT 外键名]FOREIGN KEY 字段名1 REFERENCES 主表名(字段名)；</span><br></pre></td></tr></table></figure>
+
+<p>3.非空</p>
+<p>指字段的值不能为空，写在字段类型后面；</p>
+<p>语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">字段名 数据类型 not null;</span><br></pre></td></tr></table></figure>
+
+<p>4.默认</p>
+<p>如果默认值是字符的话，需要将字符加单引号；</p>
+<p>语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">字段名 数据类型 default 默认值；</span><br></pre></td></tr></table></figure>
+
+<p>5.唯一</p>
+<p>允许为空，但是只能出现一个空值，还可以确保一列或者多列的不出现重复值；</p>
+<p>语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">字段名 数据类型 unique;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-数据库设计规范"><a href="#2-数据库设计规范" class="headerlink" title="2.数据库设计规范"></a>2.数据库设计规范</h4><p>1NF, 一范式   数据字段具有原子性，不可再发；</p>
+<p>2NF, 二范式   确保表中的所有字段都与主键相关(要有主键)；</p>
+<p>3NF,三范式   确保所有字段要和主键直接相关(要有外键，分表)；</p>
+<h3 id="第三章-数据的增加、删除、修改"><a href="#第三章-数据的增加、删除、修改" class="headerlink" title="第三章 数据的增加、删除、修改"></a>第三章 数据的增加、删除、修改</h3><h5 id="1-数据增加"><a href="#1-数据增加" class="headerlink" title="1.数据增加"></a>1.数据增加</h5><p>1.数据插入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">insert into 表名(字段1,字段2,......) values(值1,值2,.......);</span><br></pre></td></tr></table></figure>
+
+<p>2.查询语句</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from 表名;</span><br></pre></td></tr></table></figure>
+
+<p>3.简写形式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">insert 表名(字段1,字段2,......) values(值1,值2,.......);</span><br></pre></td></tr></table></figure>
+
+<p>4.最精简形式(全字段插入)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">insert 表名 values(值1,值2,.......);</span><br></pre></td></tr></table></figure>
+
+<p>5.一次插入多行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">insert into 表名(字段1,字段2,......) values(值1,值2,.......),(值1,值2,.......),......;</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-修改表中的数据"><a href="#2-修改表中的数据" class="headerlink" title="2.修改表中的数据"></a>2.修改表中的数据</h5><p>语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update 表名 set 字段1=值1,字段2=值2,...... where 条件;</span><br></pre></td></tr></table></figure>
+
+<p>SET：是对指定的字段进行修改；</p>
+<p>例如：把id为1的年龄改为18。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update stuinfo set age=18 where id=1;</span><br></pre></td></tr></table></figure>
+
+<h5 id="3-删除语句"><a href="#3-删除语句" class="headerlink" title="3.删除语句"></a>3.删除语句</h5><p>有外键约束的，先删从表，再删主表；</p>
+<p>语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">delete from 表名 where 条件;</span><br></pre></td></tr></table></figure>
+
+<h5 id="4-清空表"><a href="#4-清空表" class="headerlink" title="4.清空表"></a>4.清空表</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">truncate table 表名;</span><br></pre></td></tr></table></figure>
+
+<h5 id="truncate-清空-和delete-删除-的区别"><a href="#truncate-清空-和delete-删除-的区别" class="headerlink" title="truncate(清空)和delete(删除)的区别"></a>truncate(清空)和delete(删除)的区别</h5><p>1.truncate将清空日志，数据不可恢复。</p>
+<p>2.truncate将重置自增列。</p>
+<p>3.truncate 不可清空有外键约束的表。</p>
+<h3 id="第四章-数据查询"><a href="#第四章-数据查询" class="headerlink" title="第四章 数据查询"></a>第四章 数据查询</h3><p>1.数据查询</p>
+<p>数据库的查询就是对表中现有的数据进行逐行进行筛选的工作。</p>
+<p>2.简单查询</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select 字段1,字段2,.... from 表名 where 条件 order by 字段1,字段2,...[asc/desc] limit;</span><br></pre></td></tr></table></figure>
+
+<p>3.使用*作为通配符，表示所有子段</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from 表名</span><br></pre></td></tr></table></figure>
+
+<p>4.使用as关键词进行字段重命名，都是临时命名，只对本次有效</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select stuname as 姓名,nation as 民族,class as 班级 from stuinfo;</span><br></pre></td></tr></table></figure>
+
+<p>5.多个条件时，字段与字段之间用and连接</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from stuinfo where age=20 and sex=&apos;女&apos;;</span><br></pre></td></tr></table></figure>
+
+<p>6.逻辑运算符的优先级：非与或(! and or);</p>
+<p>7.使用Distinct消除重复行；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select distinct classid from stuinfo;</span><br></pre></td></tr></table></figure>
+
+<p>8.使用order by关键词进行排序；</p>
+<p><strong>order by 字段 asc(desc);</strong></p>
+<p><strong>asc:升序，可以省略；</strong></p>
+<p><strong>desc:降序；</strong></p>
+<p>例如：</p>
+<p>单列排序：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from stuinfo order by score;</span><br></pre></td></tr></table></figure>
+
+<p>多列排序：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from stuinfo order by score asc,class desc;</span><br></pre></td></tr></table></figure>
+
+<p>9.使用limit关键词限制行数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">limit[位置偏移量] 行数；</span><br></pre></td></tr></table></figure>
+
+<p>位置偏移量：用于指示从哪一行开始显示，是一个可选参数，如果不指定该参数，将会从结果集的第一条记录开始(从零开始计数)。</p>
+<p>limit n,m; 从n+1行开始，取m行，limit m,相当于limit 0,m;</p>
+<p>例如：显示stuinfo表中的前四条记录；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select studentid,studentname,gender,age from stuinfo limit 4;</span><br></pre></td></tr></table></figure>
+
+<p>由于没有指定位置偏移量，所以从第一行开始，行数指定为四，则意味着只显示前四条记录；</p>
+<h4 id="MySQL的内置行数"><a href="#MySQL的内置行数" class="headerlink" title="MySQL的内置行数"></a>MySQL的内置行数</h4><h5 id="1-字符串函数"><a href="#1-字符串函数" class="headerlink" title="1.字符串函数"></a>1.字符串函数</h5><p><strong>CONCAT：连接字符串；</strong></p>
+<p>select concat(‘今天’,’晴天’) 返回：今天晴天；</p>
+<p><strong>LENGTH:返回字符串的长度；</strong></p>
+<p>length(‘hello word’) 结果：11；</p>
+<p>注意：一个字代表三个字符；length(‘mysql数据库’)结果为：14;</p>
+<p><strong>UPPER:将字符串转为大写；</strong></p>
+<p>upper(‘abcd’) 返回：ABCD；</p>
+<p><strong>LTRIM:去除左边的空格；</strong></p>
+<p>ltrim(‘ abc’) 返回：’abc’;</p>
+<p><strong>RTRIM:去除右边的空格</strong>；</p>
+<p>rtrim(‘abc ‘) 返回：’abc’;</p>
+<p><strong>TRIM:去除左右两边的空格;</strong> </p>
+<p>trim(‘ ABC ‘) 返回’ABC’;</p>
+<p><strong>REPLACE:替换；</strong></p>
+<p>replace(‘abcccd’,’c’,’x’) 将字符串中的c替换为x; 返回：’abxxxd’;</p>
+<p><strong>STRCMP:比较字符串;</strong></p>
+<p>strcmp(s1,s2);</p>
+<p><strong>SUBSTRING:截取字符串；</strong></p>
+<p>substring(‘johnson’,5,3) 从第五个位置开始截取长度为3的字符串。返回：’son’;</p>
+<h5 id="2-日期函数"><a href="#2-日期函数" class="headerlink" title="2.日期函数"></a>2.日期函数</h5><p>获得当前日期+时间(date+time)函数: now();</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT NOW();</span><br></pre></td></tr></table></figure>
+
+<p>获得当前日期函数：CURDATE();</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT CURDATE();</span><br></pre></td></tr></table></figure>
+
+<p>获得当前时间函数：CURTIME();</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT CURTIME();</span><br></pre></td></tr></table></figure>
+
+<p>返回日期对应的工作日索引：WEEKDAY(DATE);</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT WEEKDAY(CURDATE());</span><br></pre></td></tr></table></figure>
+
+<p>0表示周一，1表示周二，2表示周三，3表示周四，4表示周五，5表示周六，6表示周日；</p>
+<p>返回日期对应的一周中的索引：DAYOFWEEK(DATE);</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT WEEKDAY(CURDATE());</span><br></pre></td></tr></table></figure>
+
+<p>1表示周日，2表示周一，3表示周二，4表示周三，5表示周四，6表示周五，7表示周六；</p>
+<h5 id="3-系统函数"><a href="#3-系统函数" class="headerlink" title="3.系统函数"></a>3.系统函数</h5><p><strong>DATABASE();返回当前数据库名；</strong></p>
+<p><strong>BENCHMARK(count,expr);将表达式expr重复运行count次；</strong></p>
+<p><strong>CONNECTION_ID();返回当前客户的ID；</strong></p>
+<p><strong>FOUND_ROWS();返回最后一个select查询进行检索的总行数；</strong></p>
+<p><strong>VERSION();返回MySQL服务器的版本</strong>；</p>
+<p>例如：返回当前的数据库名和版本；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select detabase(),version();</span><br></pre></td></tr></table></figure>
+
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/2019/11/03/JSP动态1-2章总结/" style="float: left;">
+        ← JSP动态前两章总结;
+    </a>
+    
+    
+    <a class="pull-right" href="/2019/11/01/MySQL4-7章总结/">
+        MySQL4-7章总结 →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By John Doe. All Rights Reserved.
+                </p>
+                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+</body>
+</html>

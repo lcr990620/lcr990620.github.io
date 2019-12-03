@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>java面向对象程序设计 | Hexo</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Hexo">
+    <meta name="author" content="John Doe">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    
+                    <li><a href="http://domain.com/" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">Hexo</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
+                            
+                            
+                            <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a></li>
+                            
+                            
+                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
+                            
+                            
+                            <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2019-10-24T16:00:00.000Z" itemprop="datePublished">
+          2019-10-25
+      </time>
+    
+</span>
+                <h1>java面向对象程序设计</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h3 id="第二章-类和对象"><a href="#第二章-类和对象" class="headerlink" title="第二章 类和对象"></a>第二章 类和对象</h3><h5 id="1-面向对象的概念："><a href="#1-面向对象的概念：" class="headerlink" title="1.面向对象的概念："></a>1.面向对象的概念：</h5><p>面向对象是把一个项目，一件事情，从头到尾一步一步执行，直到结束。</p>
+<p>例如：我让你给我办一件事，我不管你用什么办法办，但只要办成功就行（求结果）。</p>
+<h5 id="2-类的创建"><a href="#2-类的创建" class="headerlink" title="2.类的创建"></a>2.类的创建</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> 类名</span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h6 id="File——-gt-new-–-gt-class-–-gt-类名"><a href="#File——-gt-new-–-gt-class-–-gt-类名" class="headerlink" title="File——&gt;new –&gt;class –&gt;类名"></a>File——&gt;new –&gt;class –&gt;类名</h6><h5 id="3-创建对象"><a href="#3-创建对象" class="headerlink" title="3.创建对象"></a>3.创建对象</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">类名 对象名=<span class="keyword">new</span> 类名();</span><br></pre></td></tr></table></figure>
+
+<p>对象名.方法名();   对象名.属性</p>
+<h5 id="4-构造方法：方法名和类名相同-没有返回值"><a href="#4-构造方法：方法名和类名相同-没有返回值" class="headerlink" title="4.构造方法：方法名和类名相同,没有返回值"></a>4.构造方法：方法名和类名相同,没有返回值</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> 类名</span>&#123;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">public</span> 类名()&#123;&#125;<span class="comment">//主要的做用是初始化操作</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="5-构造方法重载"><a href="#5-构造方法重载" class="headerlink" title="5.构造方法重载"></a>5.构造方法重载</h5><h6 id="在同一个类中，方法名相同，参数个数，顺序，类型不相同的构造方法"><a href="#在同一个类中，方法名相同，参数个数，顺序，类型不相同的构造方法" class="headerlink" title="在同一个类中，方法名相同，参数个数，顺序，类型不相同的构造方法"></a>在同一个类中，方法名相同，参数个数，顺序，类型不相同的构造方法</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> 类名</span>&#123;</span><br><span class="line"></span><br><span class="line"> 		<span class="keyword">public</span> 类名()&#123;&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">public</span> 类名(String name,<span class="keyword">int</span> age)&#123;&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="6-构造方法的执行"><a href="#6-构造方法的执行" class="headerlink" title="6.构造方法的执行"></a>6.构造方法的执行</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> 类名();---&gt;执行构造方法</span><br><span class="line"><span class="keyword">super</span>();---&gt;执行了父类的构造方法</span><br></pre></td></tr></table></figure>
+
+<h5 id="7-static静态修饰符"><a href="#7-static静态修饰符" class="headerlink" title="7.static静态修饰符"></a>7.static静态修饰符</h5><p><strong>静态修饰符可以修饰属性，方法，代码块</strong></p>
+<p><strong>类名.属性      类名.方法名</strong></p>
+<p><strong>static不会被删除，只能手动删除，可以从内存中直接调用</strong></p>
+<p><strong>Java内存（栈和堆，static，方法区，gc (垃圾回收机制））</strong></p>
+<h3 id="第三章-面向对象三大特征—封装"><a href="#第三章-面向对象三大特征—封装" class="headerlink" title="第三章 面向对象三大特征—封装"></a>第三章 面向对象三大特征—封装</h3><h5 id="1-封装的概念"><a href="#1-封装的概念" class="headerlink" title="1.封装的概念"></a>1.封装的概念</h5><p>封装是指将对象的状态信息隐藏在对象内部，不允许外部外部程序直接访问对象内部信息，而是通过该类所提供的方法来实现对内部信息的操作访问。</p>
+<h5 id="2-封装的步骤"><a href="#2-封装的步骤" class="headerlink" title="2.封装的步骤"></a>2.封装的步骤</h5><p>(1).把属性私有化（private)</p>
+<p>(2).对这些属性设置get和set方法</p>
+<p>(3).调用处理这些方法</p>
+<h6 id="代码如下："><a href="#代码如下：" class="headerlink" title="代码如下："></a>代码如下：</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">     </span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name=name;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> age;</span><br><span class="line">    &#125;</span><br><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(age&gt;=<span class="number">1</span> &amp;&amp; age&lt;=<span class="number">100</span>)&#123;</span><br><span class="line">            <span class="keyword">this</span>.age=age;</span><br><span class="line">        &#125;elae&#123;</span><br><span class="line">            System.out.println(<span class="string">"输入的年龄不合法！"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[]args)</span></span>&#123;</span><br><span class="line">        Person person=<span class="keyword">new</span> Person();</span><br><span class="line">        Scanner scanner=<span class="keyword">new</span> Scanner(Ststem.in);</span><br><span class="line">        System.out.println(<span class="string">"请输入你的名字："</span>);</span><br><span class="line">        person.setName(scanner.next());</span><br><span class="line">        System.out.println(person.getName);</span><br><span class="line">        System.out.println(<span class="string">"请输入你的年龄："</span>);</span><br><span class="line">        person.setAge(scanner.nextInt());</span><br><span class="line">        System.out.println(person.getAge);</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="3-封装的作用"><a href="#3-封装的作用" class="headerlink" title="3.封装的作用"></a>3.封装的作用</h5><p>避免一些用一些不合乎常理的操作。</p>
+<h5 id="4-修饰符"><a href="#4-修饰符" class="headerlink" title="4.修饰符"></a>4.修饰符</h5><p>public—&gt;公共的：在一个项目中都可以访问，权限最高</p>
+<p>private—&gt;私有的：只能在本类中进行访问，权限最低</p>
+<p>protected—&gt;安全的，受保护的：同一个包能进行访问，继承中之类可以访问父类</p>
+<p>default—&gt;默认的：同一个包能访问</p>
+<h3 id="第四章-面向对象三大特征—继承"><a href="#第四章-面向对象三大特征—继承" class="headerlink" title="第四章 面向对象三大特征—继承"></a>第四章 面向对象三大特征—继承</h3><h5 id="1-继承的概念"><a href="#1-继承的概念" class="headerlink" title="1.继承的概念"></a>1.继承的概念</h5><p>父亲儿子的继承关系。</p>
+<h5 id="2-继承的好处"><a href="#2-继承的好处" class="headerlink" title="2.继承的好处"></a>2.继承的好处</h5><p>(1)提高了代码的重用性</p>
+<p>(2)提高代码的可扩展性</p>
+<h5 id="3-继承的关键字："><a href="#3-继承的关键字：" class="headerlink" title="3.继承的关键字："></a>3.继承的关键字：</h5><h5 id="extends"><a href="#extends" class="headerlink" title="extends"></a>extends</h5><h5 id="4-继承的语法："><a href="#4-继承的语法：" class="headerlink" title="4.继承的语法："></a>4.继承的语法：</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> 类名  <span class="keyword">extends</span> 父类</span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="5-继承的使用，在子类中"><a href="#5-继承的使用，在子类中" class="headerlink" title="5.继承的使用，在子类中"></a>5.继承的使用，在子类中</h5><p>可以直接调用父类的非私有属性和方法</p>
+<p>可以用super();方法     super.属性</p>
+<h5 id="6-父类构造方法调用：super"><a href="#6-父类构造方法调用：super" class="headerlink" title="6.父类构造方法调用：super();"></a>6.父类构造方法调用：super();</h5><p>构造方法不能继承</p>
+<p>调用父类的构造方法必须在之类中调用</p>
+<p>必须实在之类构造方法的第一行代码</p>
+<p>构造方法只能在构造方法中调用，不能再普通方法void中调用。</p>
+<p>当父类没有无参构造方法，但是有有参构造方法，子类构造方法要手动添加【super(“父亲”);】</p>
+<h5 id="7-重写-Override"><a href="#7-重写-Override" class="headerlink" title="7.重写@Override"></a>7.重写@Override</h5><p>必须继承</p>
+<p>方法名一致，参数个数，顺序，类型全部一致，方法体不同</p>
+<h5 id="8-异常处理"><a href="#8-异常处理" class="headerlink" title="8.异常处理"></a>8.异常处理</h5><p><strong>1.try-Catch</strong></p>
+<p>可能出现异常的代码放在try语句块中，后面语句正常运行。</p>
+<p><strong>2.finally</strong></p>
+<p>在try-catch语句块后加入finally块，无论发生任何异常finally块中的代码总会被执行</p>
+<p>finally语句不被执行的唯一情况：在异常处理代码块中执行System.exit(1),将会推出Java虚拟机；</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    <span class="comment">//代码块</span></span><br><span class="line">&#125;<span class="keyword">catch</span>(Exception e)&#123;</span><br><span class="line">    <span class="comment">//代码块</span></span><br><span class="line">    System.exit(<span class="number">1</span>);<span class="comment">//Finally块中的语句不被执行的唯一情况</span></span><br><span class="line">&#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">    <span class="comment">//代码块</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="第五章-面向对象（多态）"><a href="#第五章-面向对象（多态）" class="headerlink" title="第五章 面向对象（多态）"></a>第五章 面向对象（多态）</h3><h5 id="1-多态的概念"><a href="#1-多态的概念" class="headerlink" title="1.多态的概念"></a>1.多态的概念</h5><p>指允许不同类的对象对同一消息做出不同的响应。也就是一种事物不同的展现形态；</p>
+<p>作用：消除类型之间的耦合关系</p>
+<h5 id="2-多态的必要条件"><a href="#2-多态的必要条件" class="headerlink" title="2.多态的必要条件"></a>2.多态的必要条件</h5><p><strong>1.继承</strong></p>
+<p><strong>2.重写</strong></p>
+<p><strong>3.父类引用指向子类对象（向上转型）</strong></p>
+<h5 id="3-多态的使用"><a href="#3-多态的使用" class="headerlink" title="3.多态的使用"></a>3.多态的使用</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Father</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">cooking</span><span class="params">()</span></span>&#123;</span><br><span class="line">  		System.out.println(<span class="string">"米饭"</span>);</span><br><span class="line"> 			&#125;</span><br><span class="line">  		&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Son</span> <span class="keyword">extends</span> <span class="title">Father</span></span>&#123;</span><br><span class="line">  		<span class="meta">@Override</span></span><br><span class="line"> 	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">cooking</span><span class="params">()</span></span>&#123;</span><br><span class="line">			System.out.println(<span class="string">"熬粥"</span>);</span><br><span class="line">  			&#125;</span><br><span class="line"> 		&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"> 		<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"> 			Father son=<span class="keyword">new</span> Son();</span><br><span class="line"> 			son.cooking();</span><br><span class="line"> 			&#125;</span><br><span class="line"> 		&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="4-向下转型"><a href="#4-向下转型" class="headerlink" title="4.向下转型"></a>4.向下转型</h5><p>必须基于向上转型        </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Son son=(Son)father;</span><br></pre></td></tr></table></figure>
+
+<h5 id="5-向上转型"><a href="#5-向上转型" class="headerlink" title="5.向上转型"></a>5.向上转型</h5><p>父类指向子类对象</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Father f=<span class="keyword">new</span> Son();</span><br></pre></td></tr></table></figure>
+
+<h5 id="6-向上转型分为两种时态："><a href="#6-向上转型分为两种时态：" class="headerlink" title="6.向上转型分为两种时态："></a>6.向上转型分为两种时态：</h5><p><strong>1.编译时 能 . 出来，能调用到的看=左边；</strong></p>
+<p><strong>2.运行时 运行结果看=右边(如果右边没有这个方法，默认运行左边)；</strong></p>
+<p><strong>3.如果右边子类没有这个方法，运行父类里面的方法</strong></p>
+<h3 id="第六章-抽象"><a href="#第六章-抽象" class="headerlink" title="第六章 抽象"></a>第六章 抽象</h3><h5 id="1-抽象类的概念"><a href="#1-抽象类的概念" class="headerlink" title="1.抽象类的概念"></a>1.抽象类的概念</h5><p>如果一个类没有足够的信息去描述一个具体的对象，就称之为抽象类。</p>
+<p>作用：只能用来被继承</p>
+<p>无法new出新对象</p>
+<p>抽象类中至少有一个抽象方法，还可以定义普通方法</p>
+<h5 id="2-抽象的关键字"><a href="#2-抽象的关键字" class="headerlink" title="2.抽象的关键字"></a>2.抽象的关键字</h5><p><strong>abstract</strong></p>
+<p>可以修饰类，可以修饰方法</p>
+<h5 id="3-抽象的用法"><a href="#3-抽象的用法" class="headerlink" title="3.抽象的用法"></a>3.抽象的用法</h5><p><strong>抽象类</strong>    </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> 类名</span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>抽象方法没有方法体</strong>    </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> 方法名();</span><br></pre></td></tr></table></figure>
+
+<p><strong>当父类是抽象类的时候</strong>，<strong>子类必须重写父类里面的抽象方法</strong></p>
+<p>例如</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Animal</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">go</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Bird</span> <span class="keyword">extends</span> <span class="title">Animal</span></span>&#123;</span><br><span class="line">    <span class="meta">@override</span> <span class="comment">//重写</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">go</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"鸟飞的快！"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        Bird b=<span class="keyword">new</span> Bird();</span><br><span class="line">        b.go();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="4-final修饰符：最终的"><a href="#4-final修饰符：最终的" class="headerlink" title="4.final修饰符：最终的"></a>4.final修饰符：最终的</h5><p>作用：修饰变量，修饰方法，修饰类</p>
+<p>(1).当修饰变量时，变量转换成常量，常量的值不能改变</p>
+<p>final int a=18;//a=18;不能改变,必须给一个初始值    </p>
+<p>(2).当修饰方法时，该方法不能被重写</p>
+<p>(3).当修饰类时，该类不能被继承</p>
+<h3 id="第七章-接口"><a href="#第七章-接口" class="headerlink" title="第七章 接口"></a>第七章 接口</h3><h5 id="1-接口的概念"><a href="#1-接口的概念" class="headerlink" title="1.接口的概念"></a>1.接口的概念</h5><p>接口可以约束类的行为，是一些方法特征的集合，但没有方法的实现。</p>
+<h5 id="2-接口的关键字"><a href="#2-接口的关键字" class="headerlink" title="2.接口的关键字"></a>2.接口的关键字</h5><p><strong>interface</strong></p>
+<h5 id="3-接口的语法"><a href="#3-接口的语法" class="headerlink" title="3.接口的语法"></a>3.接口的语法</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> 接口名</span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>File—&gt;new—&gt;interface//创建接口</strong></p>
+<h5 id="4-接口的用法"><a href="#4-接口的用法" class="headerlink" title="4.接口的用法"></a>4.接口的用法</h5><p><strong>实现接口的关键字  implements</strong>    </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> 接口名</span>&#123;</span><br><span class="line"> 			<span class="comment">//接口是纯抽象类</span></span><br><span class="line">  			<span class="comment">//接口里面的方法都是抽象方法</span></span><br><span class="line">  			<span class="function"><span class="keyword">void</span> <span class="title">setData</span><span class="params">()</span></span>;</span><br><span class="line">  		&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Play</span> <span class="keyword">implements</span> 接口名</span>&#123;</span><br><span class="line">  		<span class="meta">@Override</span></span><br><span class="line">  		<span class="function"><span class="keyword">void</span> <span class="title">setData</span><span class="params">()</span></span>&#123;</span><br><span class="line">  			&#125;</span><br><span class="line"> 		&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">  		<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">  			Play play=<span class="keyword">new</span> Play();</span><br><span class="line">  			play.setData();</span><br><span class="line">  			&#125;</span><br><span class="line">  		&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意接口可以进行多继承    </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> 接口名 <span class="keyword">extends</span> 接口名，接口名</span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>一般用法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> 类名 <span class="keyword">extends</span> 父类 <span class="keyword">implements</span> 接口，接口</span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="第八章-集合框架"><a href="#第八章-集合框架" class="headerlink" title="第八章 集合框架"></a>第八章 集合框架</h3><h5 id="1-集合框架的概念"><a href="#1-集合框架的概念" class="headerlink" title="1.集合框架的概念"></a>1.集合框架的概念</h5><p>集合框架是为表示和操作而规定的一种统一的标准体系结构。</p>
+<h5 id="2-List接口，Set接口，Map接口的区别"><a href="#2-List接口，Set接口，Map接口的区别" class="headerlink" title="2.List接口，Set接口，Map接口的区别"></a>2.List接口，Set接口，Map接口的区别</h5><p><strong>Set接口继承Collection接口，存储一组唯一(不允许重复)，无序的对象。</strong></p>
+<p><strong>List接口继承Collection接口，存储一组不唯一(允许重复)，有序的对象。</strong></p>
+<p><strong>Map接口存储一组成对的键-值对象，提供key(键)到value(键)的映射。Map中的key不要求有序，不允许重复。value同样不要求有序，但允许重复。</strong></p>
+<h5 id="3-ArrayList"><a href="#3-ArrayList" class="headerlink" title="3.ArrayList"></a>3.ArrayList</h5><p>用法    </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ArrayList list=<span class="keyword">new</span> ArrayList();</span><br><span class="line">  	list.add();<span class="comment">//添加数据</span></span><br><span class="line">  	list.get();<span class="comment">//获取数据</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="4-Map"><a href="#4-Map" class="headerlink" title="4.Map"></a>4.Map</h5><p>用法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Map map=<span class="keyword">new</span> HasMap();</span><br><span class="line">map.put(key,value);<span class="comment">//key不能重复</span></span><br><span class="line">map.get(key);<span class="comment">//获取key对象的value</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="5-泛型"><a href="#5-泛型" class="headerlink" title="5.泛型"></a>5.泛型</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ArrayList&lt;String&gt; list=<span class="keyword">new</span> ArrayList&gt;&lt;String&gt;();</span><br><span class="line">Map&lt;String,String&gt; map=<span class="keyword">new</span> HasMap&lt;String,String&gt;();</span><br><span class="line">ArrayList&lt;Map&lt;String,String&gt;&gt; list=<span class="keyword">new</span> ArrayList&gt;&lt;Map&lt;String,String&gt;&gt;();</span><br></pre></td></tr></table></figure>
+
+<h3 id="第九章-高级功能—–文件操作"><a href="#第九章-高级功能—–文件操作" class="headerlink" title="第九章  高级功能—–文件操作"></a>第九章  高级功能—–文件操作</h3><h5 id="1-文件概述"><a href="#1-文件概述" class="headerlink" title="1.文件概述"></a>1.文件概述</h5><p>文件是具有内容和用途的，而文件夹是用来放置这些文件的。</p>
+<h5 id="2-什么是流"><a href="#2-什么是流" class="headerlink" title="2.什么是流"></a>2.什么是流</h5><p>java流，是指一串流动的字符，是以先进先出的方式发送和接收数据的通道。</p>
+<h5 id="3-写文件"><a href="#3-写文件" class="headerlink" title="3.写文件"></a>3.写文件</h5><p>(1)字节输出流写文件</p>
+<p>int write(int c)—–写入一个字节数据</p>
+<p>int write(byte[ ] buf)—–写入数组buf的所有字节</p>
+<p>int write(byte[ ] b,int,off,int len)—–将字节数组从off位置开始，长度为len的字节数据输出大宋输出流</p>
+<p>void close( )—–关闭输出流</p>
+<p>(2)字符输出流写文件</p>
+<p>write(String str)—–将str字符串里包含的字符输出到指定的输出流中</p>
+<p>write(String str,int off,int len)—–将str字符串里从off位置开始长度为len的字符输出到输出流中</p>
+<p>void close()—–关闭输出流</p>
+<p>void flush()—–刷新输出流</p>
+<h5 id="4-读文件"><a href="#4-读文件" class="headerlink" title="4.读文件"></a>4.读文件</h5><p>(1)字节输入流读文件</p>
+<p>int read()—–从输入流中读取单个字符</p>
+<p>int read(byte[ ] b)—–将数据读取到字节数组中</p>
+<p>int read(byte[ ] b,int off,int len)—–从输入流中读取最多len长度的字符，保存到字符数组b中，保存的位置从off位置开始</p>
+<p>void close( )—–关闭输入流</p>
+<p>int available()—–返回输入流读取的估计字节数</p>
+<p>(2)字符输入流读文件</p>
+<p>int read()—–从输入流中读取单个字符</p>
+<p>int read(byte[ ] b)—–从输入流中读取c.length长度的字符，保存到字符数组c中，返回实际读取的字符数</p>
+<p>read(byte[ ] c,int off,int len)—–从输入流中读取最多len长度的字符，保存到字符数组c中，保存的位置从off位置开始，返回实际读取的字符数</p>
+<p>void close()—–关闭流</p>
+<h3 id="第十章-高级功能—–多线程"><a href="#第十章-高级功能—–多线程" class="headerlink" title="第十章 高级功能—–多线程"></a>第十章 高级功能—–多线程</h3><h4 id="1-线程的创建"><a href="#1-线程的创建" class="headerlink" title="1.线程的创建"></a>1.线程的创建</h4><h5 id="1-实现Runnable接口"><a href="#1-实现Runnable接口" class="headerlink" title="(1)实现Runnable接口"></a>(1)实现Runnable接口</h5><p>步骤：</p>
+<p>定义一个类实现Runable接口</p>
+<p>实现接口中唯一的run()方法，该方法是线程线程开启时要执行的</p>
+<p>在代码中声明一个线程实体Thread myThread=new Thread(download);//download为实现Runable接口的类的实体对象</p>
+<p>调用myThread.start()方法启动新创建的线程</p>
+<h5 id="2-继承Thread创建线程"><a href="#2-继承Thread创建线程" class="headerlink" title="(2)继承Thread创建线程"></a>(2)继承Thread创建线程</h5><p>步骤：</p>
+<p>创建类MyThread并继承Thread类</p>
+<p>实现类MyThread的run()方法，该方法是线程开启时要执行的下载</p>
+<p>生成MyThread类的对象，MyThread myThread=new MyThread();</p>
+<p>调用myThread.start()方法启动新创建的线程</p>
+<h4 id="2-多线程同步"><a href="#2-多线程同步" class="headerlink" title="2.多线程同步"></a>2.多线程同步</h4><p>关键字：<strong>synchronized</strong></p>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/2019/10/30/jdbc连接数据库的步骤/" style="float: left;">
+        ← JDBC连接数据库的步骤
+    </a>
+    
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By John Doe. All Rights Reserved.
+                </p>
+                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+</body>
+</html>

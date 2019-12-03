@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>Android基本布局 | Hexo</title>
+  <title>JDBC连接数据库的步骤 | Hexo</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -173,40 +173,49 @@
         <div class="row col-md-offset-2">
             <div class="col-md-8">
     			<span class="post-meta">
-      <time datetime="2019-11-07T16:00:00.000Z" itemprop="datePublished">
-          2019-11-08
+      <time datetime="2019-10-29T16:00:00.000Z" itemprop="datePublished">
+          2019-10-30
       </time>
     
 </span>
-                <h1>Android基本布局</h1>
+                <h1>JDBC连接数据库的步骤</h1>
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-      		<h1 id="Android-基本布局"><a href="#Android-基本布局" class="headerlink" title="Android 基本布局"></a>Android 基本布局</h1><h3 id="基本理论"><a href="#基本理论" class="headerlink" title="基本理论"></a>基本理论</h3><p>Android六大基本布局分别是：线性布局LinearLayout、表格布局TableLayout、相对布局RelativeLayout、<br>层布局FrameLayout、绝对布局AbsoluteLayout、网格布局GridLayout。<br>其中，表格布局是线性布局的子类。网格布局是android 4.0后新增的布局。<br>在手机程序设计中，绝对布局基本上不用，用得相对较多的是线性布局和相对布局。</p>
-<p>这篇文章主要讲线性布局和相对布局</p>
-<h4 id="1-线性布局"><a href="#1-线性布局" class="headerlink" title="1.线性布局"></a>1.线性布局</h4><p>线性布局在开发中使用最多，具有垂直方向与水平方向的布局方式，通过设置属性“android:orientation”控制方向，属性值垂直（vertical）和水平(horizontal)，默认水平方向。</p>
-<h4 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h4><p>android:gravity：内部控件对齐方式，常用属性值有center、center_vertical、center_horizontal、top、bottom、left、right等。</p>
-<p>这个属性在布局组件RelativeLayout、TableLayout中也有使用，FrameLayout、AbsoluteLayout则没有这个属性。</p>
-<p>center：居中显示，这里并不是表示显示在LinearLayout的中心，当LinearLayout线性方向为垂直方向时，center表示水平居中，但是并不能垂直居中，此时等同于center_horizontal的作用；同样当线性方向为水平方向时，center表示垂直居中，等同于center_vertical。</p>
-<p>top、bottom、left、right顾名思义为内部控件居顶、低、左、右布局。<br>这里要与android:layout_gravity区分开，layout_gravity是用来设置自身相对于父元素的布局。</p>
-<p>android:layout_weight：权重，用来分配当前控件在剩余空间的大小。使用权重一般要把分配该权重方向的长度设置为零，比如在水平方向分配权重，就把width设置为零。</p>
-<h3 id="2-相对布局"><a href="#2-相对布局" class="headerlink" title="2.相对布局"></a>2.相对布局</h3><p>相对布局可以让子控件相对于兄弟控件或父控件进行布局，可以设置子控件相对于兄弟控件或父控件进行上下左右对齐。<br>RelativeLayout能替换一些嵌套视图，当我们用LinearLayout来实现一个简单的布局但又使用了过多的嵌套时，就可以考虑使用RelativeLayout重新布局。<br>相对布局就是一定要加Id才能管理。</p>
-<h4 id="RelativeLayout中子控件常用属性："><a href="#RelativeLayout中子控件常用属性：" class="headerlink" title="RelativeLayout中子控件常用属性："></a>RelativeLayout中子控件常用属性：</h4><p>1、相对于父控件，例如：android:layout_alignParentTop=“true”<br>android:layout_alignParentTop   控件的顶部与父控件的顶部对齐;<br>android:layout_alignParentBottom 控件的底部与父控件的底部对齐;<br>android:layout_alignParentLeft   控件的左部与父控件的左部对齐;<br>android:layout_alignParentRight   控件的右部与父控件的右部对齐;</p>
-<p>2、相对给定Id控件，例如：android:layout_above=“@id/**”<br>android:layout_above 控件的底部置于给定ID的控件之上;<br>android:layout_below   控件的底部置于给定ID的控件之下;<br>android:layout_toLeftOf  控件的右边缘与给定ID的控件左边缘对齐;<br>android:layout_toRightOf 控件的左边缘与给定ID的控件右边缘对齐;<br>android:layout_alignBaseline 控件的baseline与给定ID的baseline对齐;<br>android:layout_alignTop    控件的顶部边缘与给定ID的顶部边缘对齐;<br>android:layout_alignBottom  控件的底部边缘与给定ID的底部边缘对齐;<br>android:layout_alignLeft    控件的左边缘与给定ID的左边缘对齐;<br>android:layout_alignRight   控件的右边缘与给定ID的右边缘对齐;</p>
-<p>3、居中，例如：android:layout_centerInParent=“true”<br>android:layout_centerHorizontal 水平居中;<br>android:layout_centerVertical  垂直居中;<br>android:layout_centerInParent 父控件的中央;</p>
+      		<h4 id="1-jar包的引入"><a href="#1-jar包的引入" class="headerlink" title="1.jar包的引入"></a>1.jar包的引入</h4><p>(1)首先要百度下载一个jar包</p>
+<p>(2)在lib中导入jar包</p>
+<p>(3)在MySQL的jar包上右键选择 build path —&gt; add to build path</p>
+<h4 id="2-注册驱动"><a href="#2-注册驱动" class="headerlink" title="2.注册驱动"></a>2.注册驱动</h4><figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Class.forName(<span class="string">"com.mysql.jdbc.Driver"</span>);</span><br></pre></td></tr></table></figure>
+
+<p><strong>显示的加载到JVM中</strong></p>
+<h4 id="3-获取连接"><a href="#3-获取连接" class="headerlink" title="3.获取连接"></a>3.获取连接</h4><figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String url = <span class="string">"jdbc:mysql://127.0.0.1:3306/Schooldb"</span>;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String userName = <span class="string">"root"</span>;<span class="comment">//MySQL配置时的用户名</span></span><br><span class="line"></span><br><span class="line">String password = <span class="string">"111111"</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="4-连接数据库"><a href="#4-连接数据库" class="headerlink" title="4.连接数据库"></a>4.连接数据库</h4><figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Connection conn = DriverManager.getConnection(url, userName, password);</span><br></pre></td></tr></table></figure>
+
+<h4 id="5-执行SQL语句"><a href="#5-执行SQL语句" class="headerlink" title="5.执行SQL语句"></a>5.执行SQL语句</h4><figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Statement statement = conn.createStatement();</span><br><span class="line"></span><br><span class="line">String sql = <span class="string">"select * from StudentInfo"</span>;</span><br><span class="line"></span><br><span class="line">ResultSet rs = statement.executeQuery(sql);</span><br></pre></td></tr></table></figure>
+
+<h4 id="6-遍历结果集"><a href="#6-遍历结果集" class="headerlink" title="6.遍历结果集"></a>6.遍历结果集</h4><figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (rs.next()) &#123;</span><br><span class="line">    name = rs.getString(<span class="string">"StudentName"</span>);</span><br><span class="line">    age = rs.getString(<span class="string">"Age"</span>);</span><br><span class="line">    out.println(name + <span class="string">"\t"</span> + age);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="7-关闭对象"><a href="#7-关闭对象" class="headerlink" title="7.关闭对象"></a>7.关闭对象</h4><figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rs.close();</span><br><span class="line">conn.close();</span><br></pre></td></tr></table></figure>
+
+<h4 id="具体代码如下："><a href="#具体代码如下：" class="headerlink" title="具体代码如下："></a>具体代码如下：</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">"java"</span> contentType=<span class="string">"text/html; charset=utf-8"</span>%&gt;</span><br><span class="line">&lt;%@ page <span class="keyword">import</span>=<span class="string">"java.sql.*"</span>%&gt;</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=<span class="string">"ISO-8859-1"</span>&gt;</span><br><span class="line">&lt;title&gt;Insert title here&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;%</span><br><span class="line">		String driver = <span class="string">"com.mysql.jdbc.Driver"</span>;</span><br><span class="line">    </span><br><span class="line">		String url = <span class="string">"jdbc:mysql://127.0.0.1:3306/Schooldb"</span>;<span class="comment">//url指向要访问的数据库名Schooldb(是你自己的数据库名)</span></span><br><span class="line">    </span><br><span class="line">		String userName = <span class="string">"root"</span>;<span class="comment">//MySQL配置时的用户名</span></span><br><span class="line">    </span><br><span class="line">		String password = <span class="string">"111111"</span>;<span class="comment">//Java连接MySQL配置时的密码</span></span><br><span class="line"></span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line"></span><br><span class="line">			<span class="comment">//1 加载驱动程序</span></span><br><span class="line"></span><br><span class="line">			Class.forName(driver);</span><br><span class="line"></span><br><span class="line">			<span class="comment">//2 连接数据库</span></span><br><span class="line"></span><br><span class="line">			Connection conn = DriverManager.getConnection(url, userName, password);</span><br><span class="line"></span><br><span class="line">			<span class="comment">//3 用来执行SQL语句</span></span><br><span class="line"></span><br><span class="line">			Statement statement = conn.createStatement();</span><br><span class="line"></span><br><span class="line">			<span class="comment">//要执行的SQL语句 StudentInfo（自己要查询的数据表）</span></span><br><span class="line"></span><br><span class="line">			String sql = <span class="string">"select * from StudentInfo"</span>;</span><br><span class="line"></span><br><span class="line">			ResultSet rs = statement.executeQuery(sql);</span><br><span class="line">            </span><br><span class="line">			String name = <span class="keyword">null</span>;</span><br><span class="line">			String age = <span class="keyword">null</span>;</span><br><span class="line">			<span class="keyword">while</span> (rs.next()) &#123;</span><br><span class="line">                <span class="comment">//StudentName、Age是自己数据表中的数据</span></span><br><span class="line">				name = rs.getString(<span class="string">"StudentName"</span>);</span><br><span class="line">				age = rs.getString(<span class="string">"Age"</span>);</span><br><span class="line">				out.println(name + <span class="string">"\t"</span> + age);</span><br><span class="line">			&#125;</span><br><span class="line">			rs.close();</span><br><span class="line">			conn.close();</span><br><span class="line">		&#125; <span class="keyword">catch</span> (ClassNotFoundException e) &#123;</span><br><span class="line">			System.out.println(<span class="string">"Sorry,can`t find the Driver!"</span>);</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	%&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意：数据库建立的表中要有数据；</strong></p>
 
             <div class="clearfix"></div>
             <hr class="nogutter">
         </div>
         <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
     
-    <a class="pull-left" href="/2019/11/14/eslipse配置数据库连接池/" style="float: left;">
-        ← eslipse配置数据库连接池
+    <a class="pull-left" href="/2019/11/01/MySQL4-7章总结/" style="float: left;">
+        ← MySQL4-7章总结
     </a>
     
     
-    <a class="pull-right" href="/2019/11/05/JSP动态1-2章示例/">
-        jsp动态1-2章示例 →
+    <a class="pull-right" href="/2019/10/25/java面向对象程序设计/">
+        java面向对象程序设计 →
     </a>
     
 </nav>
